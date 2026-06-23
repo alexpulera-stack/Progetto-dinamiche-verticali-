@@ -45,6 +45,19 @@ h1,h2,h3{
     transition:.3s;
 }
 
+.why-item{
+    background:var(--light);
+    padding:30px;
+    border-radius:10px;
+   width: 300px;
+    text-align:center;
+    border-bottom:4px solid var(--orange);
+}
+
+.why-item h3{
+    color:var(--orange);
+    margin-bottom:15px;
+}
 .btn:hover{
     background:var(--orange-dark);
 }
@@ -55,6 +68,7 @@ h1,h2,h3{
     padding:12px 24px;
     text-decoration:none;
 }
+
 
 .badge-item a{
     color:white;
@@ -74,11 +88,20 @@ h1,h2,h3{
     justify-content:space-between;
     align-items:center;
 }
-
+.why-us h2{
+    text-align:center;
+    margin-bottom:50px;
+}
 .logo{
     height:60px;
 }
+.why-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
 
+}
 .nav-links{
     display:flex;
     gap:30px;
@@ -757,3 +780,140 @@ footer{
         font-size: 1.8rem;
     }
 }
+
+/* FAQ */
+
+.faq {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #fff;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 3px 10px rgba(0,0,0,.05);
+}
+
+.faq-item summary {
+    padding: 20px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    float: right;
+    font-size: 1.4rem;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-item p {
+    padding: 0 25px 20px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.how-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-top:50px;
+    justify-content:center;
+    
+}
+
+.how-item{
+    background:#fff;
+    padding:35px;
+    width:350px;
+    border-radius:16px;
+
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.how-item:hover{
+    transform:translateY(-8px);
+}
+
+.how-item .course-icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.how-item h1{
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    color:var(--orange);
+}
+
+.how-courses{
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.percorso-formativo{
+    margin: 0 auto 32px auto;
+    text-align: center;
+   
+}
+
+.hero-contact-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    margin:0 auto;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    max-width:600px;
+}
+
+.hero-contact-card h3{
+    color:var(--black);
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.hero-contact-card p{
+    color:var(--gray);
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.hero-contact-card form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.hero-contact-card input{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:1rem;
+    width:100%;
+}
+
+.hero-contact-card button{
+    border:none;
+    cursor:pointer;
+}
+
