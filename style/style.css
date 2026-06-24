@@ -118,20 +118,47 @@ h3 {
   color: white;
   text-decoration: none;
 }
-
 .hero {
   min-height: 85vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../img/hero.jpeg");
-  background-size: cover;
-  background-position: center;
   color: white;
 
   display: flex;
   align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  animation: sliderHero 50s infinite;
 }
 
+/* SLIDER IMMAGINI */
+
+@keyframes sliderHero {
+  0% {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("../img/hero.jpeg");
+  }
+
+  33% {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("../img/hero2.png");
+  }
+
+  66% {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("../img/hero3.png");
+  }
+
+  100% {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("../img/hero4.png");
+  }
+}
 .hero-content {
   max-width: 700px;
 }
