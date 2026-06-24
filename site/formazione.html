@@ -1,215 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+    <title>Catalogo Corsi | Dinamiche Verticali Formazione</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Catalogo corsi IRATA, GWO, DPI III Categoria, lavori in quota e sicurezza sul lavoro."
+    />
 
-<title>
-Catalogo Corsi | Dinamiche Verticali Formazione
-</title>
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
 
-<meta name="description"
-content="Catalogo corsi IRATA, GWO, DPI III Categoria, lavori in quota e sicurezza sul lavoro.">
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <img src="../img/logo.png" class="logo" alt="Logo" />
 
-<link rel="stylesheet" href="../style/style.css">
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="formazione.html">Formazione</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+    </nav>
 
-</head>
+    <section>
+      <div class="container">
+        <h1 class="section-title">Catalogo Formazione</h1>
 
-<body>
+        <p style="text-align: center; margin-bottom: 40px">
+          Esplora i nostri percorsi formativi certificati.
+        </p>
 
-<nav class="navbar">
+        <input
+          type="text"
+          id="search"
+          class="search-box"
+          placeholder="Cerca un corso..."
+        />
 
-<div class="container">
+        <div class="filter-buttons">
+          <button class="filter-btn" data-filter="all">Tutti</button>
 
-<img src="../img/logo.png" class="logo" alt="Logo">
+          <button class="filter-btn" data-filter="irata">IRATA</button>
 
-<ul class="nav-links">
+          <button class="filter-btn" data-filter="gwo">GWO</button>
 
-<li><a href="home.html">Home</a></li>
-<li><a href="formazione.html">Formazione</a></li>
-<li><a href="../contatti.html">Contatti</a></li>
+          <button class="filter-btn" data-filter="dpi">DPI</button>
 
-</ul>
+          <button class="filter-btn" data-filter="quota">
+            Lavori in Quota
+          </button>
+        </div>
 
-</div>
+        <div class="cards">
+          <div class="card course-card irata">
+            <h3>IRATA Livello 1</h3>
 
-</nav>
+            <p>Introduzione all'accesso e lavoro su fune.</p>
 
-<section>
+            <a href="irata.html" class="btn"> Dettagli </a>
+          </div>
 
-<div class="container">
+          <div class="card course-card irata">
+            <h3>IRATA Livello 2</h3>
 
-<h1 class="section-title">
-Catalogo Formazione
-</h1>
+            <p>Progressione professionale per operatori.</p>
 
-<p style="text-align:center;margin-bottom:40px;">
-Esplora i nostri percorsi formativi certificati.
-</p>
+            <a href="irata.html" class="btn"> Dettagli </a>
+          </div>
 
-<input
-type="text"
-id="search"
-class="search-box"
-placeholder="Cerca un corso...">
+          <div class="card course-card gwo">
+            <h3>GWO BST</h3>
 
-<div class="filter-buttons">
+            <p>Corso base sicurezza settore eolico.</p>
 
-<button class="filter-btn" data-filter="all">
-Tutti
-</button>
+            <a href="gwo.html" class="btn"> Dettagli </a>
+          </div>
 
-<button class="filter-btn" data-filter="irata">
-IRATA
-</button>
+          <div class="card course-card dpi">
+            <h3>DPI III Categoria</h3>
 
-<button class="filter-btn" data-filter="gwo">
-GWO
-</button>
+            <p>Addestramento dispositivi anticaduta.</p>
 
-<button class="filter-btn" data-filter="dpi">
-DPI
-</button>
+            <a href="dpi.html" class="btn"> Dettagli </a>
+          </div>
 
-<button class="filter-btn" data-filter="quota">
-Lavori in Quota
-</button>
+          <div class="card course-card quota">
+            <h3>Lavori in Quota</h3>
 
-</div>
+            <p>Percorso conforme al D.Lgs 81/08.</p>
 
-<div class="cards">
+            <a href="quota.html" class="btn"> Dettagli </a>
+          </div>
 
-<div class="card course-card irata">
+          <div class="card course-card quota">
+            <h3>Spazi Confinati</h3>
 
-<h3>IRATA Livello 1</h3>
-
-<p>
-Introduzione all'accesso e lavoro su fune.
-</p>
-
-<a href="irata.html" class="btn">
-Dettagli
-</a>
-
-</div>
-
-<div class="card course-card irata">
-
-<h3>IRATA Livello 2</h3>
-
-<p>
-Progressione professionale per operatori.
-</p>
-
-<a href="irata.html" class="btn">
-Dettagli
-</a>
-
-</div>
-
-<div class="card course-card gwo">
-
-<h3>GWO BST</h3>
-
-<p>
-Corso base sicurezza settore eolico.
-</p>
-
-<a href="gwo.html" class="btn">
-Dettagli
-</a>
-
-</div>
-
-<div class="card course-card dpi">
-
-<h3>DPI III Categoria</h3>
-
-<p>
-Addestramento dispositivi anticaduta.
-</p>
-
-<a href="dpi.html" class="btn">
-Dettagli
-</a>
-
-</div>
-
-<div class="card course-card quota">
-
-<h3>Lavori in Quota</h3>
-
-<p>
-Percorso conforme al D.Lgs 81/08.
-</p>
-
-<a href="quota.html" class="btn">
-Dettagli
-</a>
-
-</div>
-
-<div class="card course-card quota">
-
-<h3>Spazi Confinati</h3>
-
-<p>
-Procedure operative e sicurezza.
-</p>
-
-<a href="confinati.html" class="btn">
-Dettagli
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-
-<h3>Dinamiche Verticali Formazione</h3>
-
-<p>Torino</p>
-
-</div>
-
-<div>
-
-<h3>Certificazioni</h3>
-
-<p>PTI</p>
-<p>IRATA</p>
-<p>GWO</p>
-
-</div>
-
-<div>
-
-<h3>Contatti</h3>
-
-<p>info@dvformazione.it</p>
-
-</div>
-
-</div>
-
-</div>
-
-</footer>
-
-<script src="../scripts/script.js"></script>
-
-</body>
+            <p>Procedure operative e sicurezza.</p>
+
+            <a href="confinati.html" class="btn"> Dettagli </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3>Dinamiche Verticali Formazione</h3>
+
+            <p>Torino</p>
+          </div>
+
+          <div>
+            <h3>Certificazioni</h3>
+
+            <p>PTI</p>
+            <p>IRATA</p>
+            <p>GWO</p>
+          </div>
+
+          <div>
+            <h3>Contatti</h3>
+
+            <p>info@dvformazione.it</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+  </body>
 </html>
