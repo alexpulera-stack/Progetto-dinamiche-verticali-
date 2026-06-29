@@ -548,31 +548,6 @@ footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.course-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.course-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: var(--black);
-}
-
-.course-item p {
-  color: var(--gray);
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.course-price {
-  font-size: 1.4rem;
-  color: var(--orange);
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
 /* Upcoming Dates Section */
 
 .upcoming-dates {
@@ -1014,6 +989,7 @@ footer {
 .blog-card {
   background-color: white;
   width: 100%;
+  height: fit-content;
   padding: 24px;
   border-radius: 16px;
   overflow: hidden;
@@ -1075,6 +1051,7 @@ footer {
 .course-card {
   background-color: white;
   width: 100%;
+  height: fit-content;
   padding: 24px;
   border-radius: 16px;
   overflow: hidden;
@@ -1107,12 +1084,6 @@ footer {
   overflow: hidden;
 }
 
-.course-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .course-author {
   border-radius: 100%;
   overflow: hidden;
@@ -1122,4 +1093,43 @@ footer {
 .course-tag {
   margin-left: auto;
   font-size: 14px;
+  border-radius: 16px;
+  padding: 8px 24px;
+}
+
+.course-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.course-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.course-info div:nth-of-type(1) {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.course-price {
+  font-size: 24px;
+  border-radius: 16px;
+}
+
+.course-green {
+  background-color: rgba(30, 125, 30, 0.261);
+}
+
+.course-button {
+  border-radius: 16px;
+  background: var(--orange);
+  border: none;
+  padding: 12px;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
 }
