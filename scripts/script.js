@@ -41,3 +41,18 @@ card.style.display = "none";
 });
 
 });
+
+
+function navBar(){
+    return document.querySelector("body").innerHTML=`<nav class="navbar">
+      <div class="container">
+        <img src="../img/logo.png" class="logo" alt="Dinamiche Verticali" />
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="formazione.html">Formazione</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </nav>`
+}
