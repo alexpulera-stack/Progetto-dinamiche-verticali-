@@ -3,202 +3,233 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Catalogo Corsi | Dinamiche Verticali Formazione</title>
-
+    <title>Blog | Dinamiche Verticali Formazione</title>
     <meta
       name="description"
-      content="Catalogo corsi IRATA, GWO, DPI III Categoria, lavori in quota e sicurezza sul lavoro."
+      content="Articoli su sicurezza, normative, certificazioni e carriera nel settore dei lavori in quota."
     />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/blog.css" />
   </head>
-
   <body>
-    <!-- NAVBAR -->
     <script src="../scripts/script.js"></script>
-
     <script>
       navBar();
     </script>
 
-    <section>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
       <div class="container">
-        <h1 class="section-title">Catalogo Formazione</h1>
-
-        <p style="text-align: center; margin-bottom: 40px">
-          Esplora i nostri percorsi formativi certificati.
+        <p class="how-kicker">Aggiornamenti e approfondimenti</p>
+        <h1>Blog</h1>
+        <p class="page-hero-sub">
+          Articoli su sicurezza, normative, certificazioni e carriera nel
+          settore dei lavori in quota.
         </p>
       </div>
+    </section>
 
-      <div class="blog-container">
-        <div class="blog-card">
-          <img
-            src="https://www.altrasoluzione.com/images/blog/siti-per-scaricare-immagini-gratis-legalmente/immagini-gratis-big.jpg"
-            alt=""
-            class="blog-image"
-          />
-          <div class="blog-content">
-            <div>
-              <h3 class="blog-title">Pilota F1</h3>
-              <p class="blog-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
-                saepe porro, explicabo hic distinctio quidem numquam accusamus,
-                quasi necessitatibus alias id, iste laudantium! Deserunt
-                accusantium, nemo inventore sequi repellat quam!
-              </p>
+    <!-- ARTICOLI -->
+    <section class="blog-section">
+      <div class="container">
+        <div class="blog-container">
+          <a href="blog/irata-certificazione.html" class="blog-card">
+            <img
+              src="https://www.vegaformazione.it/p/imagesc/lavori-in-quota-da-che-altezza-bisogna-valutare-il-rischio-61c98b7ca0991.jpg"
+              alt="Certificazione IRATA"
+              class="blog-image"
+            />
+            <div class="blog-content">
+              <div>
+                <span class="blog-tag blog-tag--certs">Certificazioni</span>
+                <h3 class="blog-title">
+                  Certificazione IRATA: guida completa ai livelli 1, 2 e 3
+                </h3>
+                <p class="blog-description">
+                  Tutto quello che devi sapere sulla certificazione IRATA: cosa
+                  valuta, come prepararsi agli esami e quali opportunità apre
+                  nel mercato del lavoro internazionale.
+                </p>
+              </div>
+              <div class="blog-info">
+                <img
+                  class="blog-author"
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&q=80&auto=format&fit=crop"
+                  alt="Marco Bianchi"
+                />
+                <span>Marco Bianchi</span>
+                <span class="blog-date">15/06/2026</span>
+              </div>
             </div>
+          </a>
 
-            <div class="blog-info">
-              <img
-                class="blog-author"
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
-                alt=""
-              />
-              <span>Pino Pierino</span>
-              <span class="blog-date">29/06/2026</span>
+          <a href="blog/gwo-energia-eolica.html" class="blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80&auto=format&fit=crop"
+              alt="GWO Energia Eolica"
+              class="blog-image"
+            />
+            <div class="blog-content">
+              <div>
+                <span class="blog-tag blog-tag--eolica">Energia Eolica</span>
+                <h3 class="blog-title">
+                  GWO: come lavorare nel settore dell'energia eolica
+                </h3>
+                <p class="blog-description">
+                  Il GWO è il passaporto per lavorare sulle turbine eoliche in
+                  Europa e nel mondo. Scopri i moduli obbligatori, le durate e
+                  le certificazioni riconosciute.
+                </p>
+              </div>
+              <div class="blog-info">
+                <img
+                  class="blog-author"
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&q=80&auto=format&fit=crop"
+                  alt="Sara Rossetti"
+                />
+                <span>Sara Rossetti</span>
+                <span class="blog-date">10/06/2026</span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="blog-card">
-          <img
-            src="https://www.altrasoluzione.com/images/blog/siti-per-scaricare-immagini-gratis-legalmente/immagini-gratis-big.jpg"
-            alt=""
-            class="blog-image"
-          />
-          <div class="blog-content">
-            <div>
-              <h3 class="blog-title">Pilota F1</h3>
-              <p class="blog-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
-                saepe porro, explicabo hic distinctio quidem numquam accusamus,
-                quasi necessitatibus alias id, iste laudantium! Deserunt
-                accusantium, nemo inventore sequi repellat quam!
-              </p>
-            </div>
+          </a>
 
-            <div class="blog-info">
-              <img
-                class="blog-author"
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
-                alt=""
-              />
-              <span>Pino Pierino</span>
-              <span class="blog-date">29/06/2026</span>
+          <a href="blog/dpi-terza-categoria.html" class="blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop"
+              alt="DPI III Categoria"
+              class="blog-image"
+            />
+            <div class="blog-content">
+              <div>
+                <span class="blog-tag blog-tag--sicurezza">Sicurezza</span>
+                <h3 class="blog-title">
+                  DPI di III Categoria: come sceglierli e usarli correttamente
+                </h3>
+                <p class="blog-description">
+                  I DPI di III Categoria proteggono da rischi mortali.
+                  Imbracature, elmetti, dispositivi anticaduta: guida alla
+                  scelta, all'uso e alla manutenzione.
+                </p>
+              </div>
+              <div class="blog-info">
+                <img
+                  class="blog-author"
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&q=80&auto=format&fit=crop"
+                  alt="Luca Ferrari"
+                />
+                <span>Luca Ferrari</span>
+                <span class="blog-date">05/06/2026</span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="blog-card">
-          <img
-            src="https://www.altrasoluzione.com/images/blog/siti-per-scaricare-immagini-gratis-legalmente/immagini-gratis-big.jpg"
-            alt=""
-            class="blog-image"
-          />
-          <div class="blog-content">
-            <div>
-              <h3 class="blog-title">Pilota F1</h3>
-              <p class="blog-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
-                saepe porro, explicabo hic distinctio quidem numquam accusamus,
-                quasi necessitatibus alias id, iste laudantium! Deserunt
-                accusantium, nemo inventore sequi repellat quam!
-              </p>
-            </div>
+          </a>
 
-            <div class="blog-info">
-              <img
-                class="blog-author"
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
-                alt=""
-              />
-              <span>Pino Pierino</span>
-              <span class="blog-date">29/06/2026</span>
+          <a href="blog/lavori-quota-normativa.html" class="blog-card">
+            <img
+              src="https://www.vegaformazione.it/p/imagesc/lavori-in-quota-da-che-altezza-bisogna-valutare-il-rischio-61c98b7ca0991.jpg"
+              alt="Lavori in Quota"
+              class="blog-image"
+            />
+            <div class="blog-content">
+              <div>
+                <span class="blog-tag blog-tag--normativa">Normativa</span>
+                <h3 class="blog-title">
+                  Lavori in quota: tutto sulla normativa D.Lgs. 81/08
+                </h3>
+                <p class="blog-description">
+                  Il Testo Unico sulla Sicurezza regolamenta ogni attività
+                  svolta a oltre 2 metri di altezza. Obblighi del datore di
+                  lavoro, valutazione del rischio e formazione.
+                </p>
+              </div>
+              <div class="blog-info">
+                <img
+                  class="blog-author"
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&q=80&auto=format&fit=crop"
+                  alt="Marco Bianchi"
+                />
+                <span>Marco Bianchi</span>
+                <span class="blog-date">28/05/2026</span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="blog-card">
-          <img
-            src="https://www.altrasoluzione.com/images/blog/siti-per-scaricare-immagini-gratis-legalmente/immagini-gratis-big.jpg"
-            alt=""
-            class="blog-image"
-          />
-          <div class="blog-content">
-            <div>
-              <h3 class="blog-title">Pilota F1</h3>
-              <p class="blog-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
-                saepe porro, explicabo hic distinctio quidem numquam accusamus,
-                quasi necessitatibus alias id, iste laudantium! Deserunt
-                accusantium, nemo inventore sequi repellat quam!
-              </p>
-            </div>
+          </a>
 
-            <div class="blog-info">
-              <img
-                class="blog-author"
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
-                alt=""
-              />
-              <span>Pino Pierino</span>
-              <span class="blog-date">29/06/2026</span>
+          <a href="blog/spazi-confinati.html" class="blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80&auto=format&fit=crop"
+              alt="Spazi Confinati"
+              class="blog-image"
+            />
+            <div class="blog-content">
+              <div>
+                <span class="blog-tag blog-tag--sicurezza">Sicurezza</span>
+                <h3 class="blog-title">
+                  Spazi confinati: rischi, normativa e formazione obbligatoria
+                </h3>
+                <p class="blog-description">
+                  Serbatoi, gallerie, cunicoli: gli spazi confinati sono tra i
+                  luoghi di lavoro più pericolosi. La normativa italiana impone
+                  una formazione specifica per chi vi opera.
+                </p>
+              </div>
+              <div class="blog-info">
+                <img
+                  class="blog-author"
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&q=80&auto=format&fit=crop"
+                  alt="Sara Rossetti"
+                />
+                <span>Sara Rossetti</span>
+                <span class="blog-date">20/05/2026</span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="blog-card">
-          <img
-            src="https://www.altrasoluzione.com/images/blog/siti-per-scaricare-immagini-gratis-legalmente/immagini-gratis-big.jpg"
-            alt=""
-            class="blog-image"
-          />
-          <div class="blog-content">
-            <div>
-              <h3 class="blog-title">Pilota F1</h3>
-              <p class="blog-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
-                saepe porro, explicabo hic distinctio quidem numquam accusamus,
-                quasi necessitatibus alias id, iste laudantium! Deserunt
-                accusantium, nemo inventore sequi repellat quam!
-              </p>
-            </div>
+          </a>
 
-            <div class="blog-info">
-              <img
-                class="blog-author"
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
-                alt=""
-              />
-              <span>Pino Pierino</span>
-              <span class="blog-date">29/06/2026</span>
+          <a href="blog/carriera-fune.html" class="blog-card">
+            <img
+              src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80&auto=format&fit=crop"
+              alt="Carriera Accesso su Fune"
+              class="blog-image"
+            />
+            <div class="blog-content">
+              <div>
+                <span class="blog-tag blog-tag--carriera">Carriera</span>
+                <h3 class="blog-title">
+                  Accesso su fune: percorso formativo e sbocchi professionali
+                </h3>
+                <p class="blog-description">
+                  Dall'IRATA Livello 1 ai cantieri internazionali: come
+                  costruire una carriera nell'accesso su fune, quali
+                  certificazioni servono e quanto guadagna un rope access
+                  technician.
+                </p>
+              </div>
+              <div class="blog-info">
+                <img
+                  class="blog-author"
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&q=80&auto=format&fit=crop"
+                  alt="Luca Ferrari"
+                />
+                <span>Luca Ferrari</span>
+                <span class="blog-date">12/05/2026</span>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div>
-            <h3>Dinamiche Verticali Formazione</h3>
-
-            <p>Torino</p>
-          </div>
-
-          <div>
-            <h3>Certificazioni</h3>
-
-            <p>PTI</p>
-            <p>IRATA</p>
-            <p>GWO</p>
-          </div>
-
-          <div>
-            <h3>Contatti</h3>
-
-            <p>info@dvformazione.it</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div id="site-footer"></div>
+    <script>
+      siteFooter();
+    </script>
   </body>
 </html>

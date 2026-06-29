@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogo Corsi | Dinamiche Verticali Formazione</title>
+    <meta
+      name="description"
+      content="Tutti i corsi certificati IRATA, GWO, Fune D.Lgs. 81/08, Lavori in Quota, PTI e altro ancora."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/corsi.css" />
+  </head>
+  <body>
+    <script src="../scripts/script.js"></script>
+    <script>
+      navBar();
+    </script>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="how-kicker">Formazione certificata</p>
+        <h1>Catalogo Corsi</h1>
+        <p class="page-hero-sub">
+          Percorsi certificati IRATA, GWO, D.Lgs.&nbsp;81/08 e altro. Filtra per
+          categoria o cerca per nome.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding: 64px 0 100px">
+      <div class="container">
+        <div class="formazione-controls">
+          <div
+            class="courses-filters"
+            role="group"
+            aria-label="Filtra per categoria"
+          >
+            <button class="courses-filter-btn active" data-filter="all">
+              Tutti
+            </button>
+            <button
+              class="courses-filter-btn"
+              data-filter="fune"
+              style="--cat: #16a34a"
+            >
+              <span class="filter-dot" aria-hidden="true"></span>Fune
+              D.Lgs.&nbsp;81/08
+            </button>
+            <button
+              class="courses-filter-btn"
+              data-filter="gwo"
+              style="--cat: #db2777"
+            >
+              <span class="filter-dot" aria-hidden="true"></span>GWO
+            </button>
+            <button
+              class="courses-filter-btn"
+              data-filter="irata"
+              style="--cat: #1e40af"
+            >
+              <span class="filter-dot" aria-hidden="true"></span>IRATA
+            </button>
+            <button
+              class="courses-filter-btn"
+              data-filter="quota"
+              style="--cat: #ca8a04"
+            >
+              <span class="filter-dot" aria-hidden="true"></span>Lavori in Quota
+            </button>
+            <button
+              class="courses-filter-btn"
+              data-filter="pti"
+              style="--cat: #1c1c1e"
+            >
+              <span class="filter-dot" aria-hidden="true"></span>PTI
+            </button>
+            <button
+              class="courses-filter-btn"
+              data-filter="soccorso"
+              style="--cat: #dc2626"
+            >
+              <span class="filter-dot" aria-hidden="true"></span>Soccorso
+            </button>
+            <button
+              class="courses-filter-btn"
+              data-filter="accreditati"
+              style="--cat: #0891b2"
+            >
+              <span class="filter-dot" aria-hidden="true"></span>Corsi
+              accreditati
+            </button>
+          </div>
+          <div class="formazione-search">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >search</span
+            >
+            <input
+              type="text"
+              id="search"
+              placeholder="Cerca un corso…"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="formazione-cards-grid" id="courses-grid">
+          <div class="course-card" data-category="irata">
+            <img
+              src="../img/hero.jpeg"
+              alt="IRATA Livello 1"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-irata">IRATA</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">IRATA Livello 1 – Accesso su Fune</h3>
+                <p class="course-description">
+                  Formazione base per lavoratori su fune: sicurezza, uso dei
+                  DPI, tecniche di risalita, discesa e soccorso di base.
+                  Valutazione con esaminatore IRATA accreditato.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Certificato IRATA Internazionale
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">890 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>5 giorni</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="irata">
+            <img
+              src="../img/hero2.png"
+              alt="IRATA Livello 2"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-irata">IRATA</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  IRATA Livello 2 – Posizionamento su Fune
+                </h3>
+                <p class="course-description">
+                  Tecniche avanzate di posizionamento e lavoro su superfici
+                  verticali. Richiede IRATA L1 valido. Prova pratica con
+                  esaminatore accreditato inclusa.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Certificato IRATA Internazionale
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">1.190 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>5 giorni</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="irata">
+            <img
+              src="../img/hero3.png"
+              alt="IRATA Livello 3"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-irata">IRATA</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  IRATA Livello 3 – Supervisore su Fune
+                </h3>
+                <p class="course-description">
+                  Massimo livello IRATA: supervisione squadre in quota,
+                  pianificazione operativa e gestione del rischio. Richiede
+                  IRATA L2 valido e documentata esperienza.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Certificato IRATA Internazionale
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">1.490 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>5 giorni</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="gwo">
+            <img
+              src="../img/hero4.png"
+              alt="GWO Basic Safety Training"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-gwo">GWO</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">GWO Basic Safety Training (BST)</h3>
+                <p class="course-description">
+                  Formazione obbligatoria per l'eolico: pronto soccorso,
+                  antincendio, sicurezza manuale, lavoro in quota e
+                  sopravvivenza in mare. Riconosciuto a livello globale.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >GWO Certificate
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">750 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>4 giorni</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="fune">
+            <img
+              src="../img/hero.jpeg"
+              alt="Addetto Sistemi di Accesso su Fune"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-fune"
+                >Fune D.Lgs.&nbsp;81/08</span
+              >
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  Addetto Sistemi di Accesso e Posizionamento
+                </h3>
+                <p class="course-description">
+                  Corso D.Lgs. 81/08 per l'uso dei sistemi di accesso e
+                  posizionamento su fune. Teoria, pratica su strutture dedicate
+                  e attestato finale rilasciato.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Attestato D.Lgs.&nbsp;81/08
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">390 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>2 giorni</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="fune">
+            <img
+              src="../img/hero2.png"
+              alt="Addetto Sistemi di Salvataggio su Fune"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-fune"
+                >Fune D.Lgs.&nbsp;81/08</span
+              >
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  Addetto Sistemi di Salvataggio su Fune
+                </h3>
+                <p class="course-description">
+                  Tecniche di soccorso e salvataggio per operatori su fune.
+                  Conformità D.Lgs. 81/08. Manovre di recupero, uso dei presidi
+                  e simulazioni pratiche incluse.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Attestato D.Lgs.&nbsp;81/08
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">490 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>2 giorni</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="fune">
+            <img
+              src="../img/hero3.png"
+              alt="Aggiornamento Addetto su Fune"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-fune"
+                >Fune D.Lgs.&nbsp;81/08</span
+              >
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  Aggiornamento Addetto Sistemi su Fune
+                </h3>
+                <p class="course-description">
+                  Aggiornamento periodico obbligatorio per addetti su fune già
+                  certificati. Revisione normativa, verifica competenze e prove
+                  pratiche incluse.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Attestato D.Lgs.&nbsp;81/08
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">190 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>1 giorno</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="quota">
+            <img
+              src="../img/hero4.png"
+              alt="Lavori in Quota"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-quota">Lavori in Quota</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  Addetto Lavori in Quota – D.Lgs. 81/08
+                </h3>
+                <p class="course-description">
+                  Formazione per lavoratori esposti al rischio di caduta
+                  dall'alto: scale, ponteggi, piattaforme elevabili e
+                  dispositivi anticaduta. Attestato riconosciuto.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Attestato D.Lgs.&nbsp;81/08
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">280 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>1 giorno</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="pti">
+            <img
+              src="../img/hero.jpeg"
+              alt="PTI Livello 1"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-pti">PTI</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">PTI Livello 1 – Lavori su Fune</h3>
+                <p class="course-description">
+                  Corso di accesso base secondo lo standard PTI Italia. Teoria,
+                  pratica su strutture, uso DPI anticaduta e valutazione finale
+                  con istruttore PTI certificato.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Certificato PTI Italia
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">620 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>4 giorni</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="pti">
+            <img
+              src="../img/hero2.png"
+              alt="PTI Livello 2"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-pti">PTI</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  PTI Livello 2 – Posizionamento su Fune
+                </h3>
+                <p class="course-description">
+                  Avanzamento PTI: tecniche di posizionamento, lavoro in quota
+                  su strutture complesse e gestione autonoma delle manovre.
+                  Richiede PTI L1 valido.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Certificato PTI Italia
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">820 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>4 giorni</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="soccorso">
+            <img
+              src="../img/hero3.png"
+              alt="Soccorso su Fune"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-soccorso">Soccorso</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">Tecniche di Soccorso su Fune</h3>
+                <p class="course-description">
+                  Pianificazione e gestione dell'emergenza in quota: recupero
+                  del lavoratore infortunato, coordinamento con i soccorsi e uso
+                  dei presidi di emergenza.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Attestato Soccorso in Quota
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">350 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>1 giorno</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-category="accreditati">
+            <img
+              src="../img/hero4.png"
+              alt="DPI Anticaduta Accreditato"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-accreditati">Accreditato</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  DPI III Categoria – Anticaduta (Accreditato)
+                </h3>
+                <p class="course-description">
+                  Corso accreditato per l'uso dei DPI di III categoria
+                  anticaduta. Normativa EN 361, ispezione, uso corretto e
+                  simulazioni pratiche. Attestato accreditato rilasciato.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >Attestato Accreditato
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">240 €</span>
+                <div>
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    ><span>1 giorno</span></span
+                  >
+                  <span class="course-meta-item"
+                    ><span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    ><span>Torino (TO)</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="no-results" id="no-results" aria-live="polite">
+            <span class="material-symbols-outlined">search_off</span>
+            Nessun corso trovato.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script>
+      siteFooter();
+    </script>
+
+    <script>
+      (function () {
+        const cards = Array.from(
+          document.querySelectorAll(".formazione-cards-grid .course-card"),
+        );
+        const noResults = document.getElementById("no-results");
+        const searchInput = document.getElementById("search");
+        let activeFilter = "all";
+
+        function applyFilters() {
+          const query = searchInput.value.toLowerCase().trim();
+          let visible = 0;
+          cards.forEach(function (card) {
+            const matchCat =
+              activeFilter === "all" || card.dataset.category === activeFilter;
+            const matchSearch =
+              !query || card.textContent.toLowerCase().includes(query);
+            const show = matchCat && matchSearch;
+            card.style.display = show ? "flex" : "none";
+            if (show) visible++;
+          });
+          noResults.style.display = visible === 0 ? "block" : "none";
+        }
+
+        document
+          .querySelectorAll(".courses-filter-btn")
+          .forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              document
+                .querySelectorAll(".courses-filter-btn")
+                .forEach(function (b) {
+                  b.classList.remove("active");
+                });
+              this.classList.add("active");
+              activeFilter = this.dataset.filter;
+              applyFilters();
+            });
+          });
+
+        searchInput.addEventListener("input", applyFilters);
+
+        const slugMap = {
+          irata: ["irata-livello-1", "irata-livello-2", "irata-livello-3"],
+          gwo: ["gwo-bst"],
+          fune: ["fune-accesso", "fune-salvataggio", "fune-aggiornamento"],
+          quota: ["lavori-quota"],
+          pti: ["pti-livello-1", "pti-livello-2"],
+          soccorso: ["soccorso-fune"],
+          accreditati: ["dpi-anticaduta"],
+        };
+        const catCounters = {};
+        cards.forEach(function (card) {
+          const cat = card.dataset.category;
+          catCounters[cat] = catCounters[cat] || 0;
+          const slug = (slugMap[cat] || [])[catCounters[cat]++] || null;
+          card.style.cursor = "pointer";
+          card.tabIndex = 0;
+          card.setAttribute("role", "link");
+          card.addEventListener("click", function () {
+            window.location.href = slug
+              ? "corsi/" + slug + ".html"
+              : "contatti.html";
+          });
+          card.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") card.click();
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

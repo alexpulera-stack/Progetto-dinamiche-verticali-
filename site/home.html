@@ -13,106 +13,498 @@
       content="Centro certificato IRATA, GWO e PTI. Formazione specializzata per lavori in quota, accesso su fune e sicurezza sul lavoro."
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="../style/style.css" />
   </head>
 
   <body>
     <!-- NAVBAR -->
-       <script src="../scripts/script.js"></script>
+    <script src="../scripts/script.js"></script>
 
-   <script>
-    navBar();
-   </script>
+    <script>
+      navBar();
+    </script>
 
     <!-- HERO SECTION -->
 
     <header class="hero">
-            <div class="container hero-content">
-       <div class="hero-text">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-target="5000" data-suffix="+"
+              >0</span
+            >
+            <span class="hero-stat-label">persone formate dal 2015</span>
+          </div>
 
-    <h1>Formazione Specializzata in Lavori in Quota</h1>
+          <h1>
+            Formazione Specializzata in
+            <span class="hero-title-accent">Lavori in Quota</span>
+          </h1>
 
-    <p>
-        Centro certificato IRATA, GWO e Petzl Technical Institute.
-        Competenza, sicurezza e professionalità dal 2015.
-    </p>
+          <p>
+            Centro certificato IRATA, GWO e Petzl Technical Institute.
+            Competenza, sicurezza e professionalita dal 2015.
+          </p>
 
-    <div class="hero-buttons">
-        <a href="formazione.html" class="btn btn-primary">Scopri i Corsi</a>
-        <a href="contatti.html" class="btn btn-primary">Contattaci</a>
-    </div>
-
-    <div class="hero-cards">
-        <div class="hero-card">
-            <span></span>
-            <h3>Centro Certificato</h3>
-            <p>IRATA, GWO e PTI.</p>
+          <div class="hero-buttons">
+            <a href="corsi.html" class="btn btn-primary">Scopri i Corsi</a>
+            <a href="contatti.html" class="btn btn-secondary">Contattaci</a>
+          </div>
         </div>
 
-        <div class="hero-card">
-            <span></span>
-            <h3>Riconoscimento Internazionale</h3>
-            <p>Certificazioni valide in tutto il mondo.</p>
+        <div class="hero-right">
+          <div class="hero-image-frame">
+            <img
+              src="../img/hero2.png"
+              alt="Tecnico scalatore in lavori su fune"
+              class="hero-climber-image"
+            />
+            <article
+              class="hero-corner-card is-bottom-right"
+              aria-live="polite"
+            >
+              <img
+                src="https://randomuser.me/api/portraits/men/34.jpg"
+                alt="Corsista certificato"
+                class="hero-corner-avatar"
+              />
+              <div class="hero-corner-meta">
+                <div class="hero-corner-text">
+                  <strong class="hero-corner-name">Marco R.</strong>
+                  <p class="hero-corner-role">Soccorritore su fune</p>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
+      </div>
+    </header>
 
-        <div class="hero-card">
-            <span></span>
-            <h3>Formatori Esperti</h3>
-            <p>Tecnici attivi con esperienza sul campo.</p>
+    <section class="hero-certs-wrap" aria-label="Certificazioni ufficiali">
+      <div class="container">
+        <div class="hero-certs">
+          <a
+            href="https://www.dvformazione.it/corsi-petzl-dinamiche-verticali.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-cert-link"
+          >
+            <img
+              src="https://www.dvformazione.it/img/loghi/logo-petzl-technical-institute.jpg"
+              alt="Petzl Technical Institute"
+              class="hero-cert-logo"
+            />
+          </a>
+          <a
+            href="https://www.dvformazione.it/corsi-irata-dinamiche-verticali.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-cert-link"
+          >
+            <img
+              src="https://www.dvformazione.it/img/loghi/logo-irata-international.jpg"
+              alt="Dinamiche Verticali Formazione"
+              class="hero-cert-logo"
+            />
+          </a>
+          <a
+            href="https://www.dvformazione.it/gwo-formazione-certificazione.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-cert-link"
+          >
+            <img
+              src="https://www.dvformazione.it/img/loghi/logo-global-wind-organisation.jpg"
+              alt="Global Wind Organisation"
+              class="hero-cert-logo"
+            />
+          </a>
         </div>
-    </div>
+      </div>
+    </section>
 
-    </header>    
-
-     <section class="container">
-      <h2>I nostri corsi</h2>
-       <div class="course-container">
-         <div class="course-card">
-           <img
-            src="https://www.vegaformazione.it/p/imagesc/lavori-in-quota-da-che-altezza-bisogna-valutare-il-rischio-61c98b7ca0991.jpg"
-            alt=""
-            class="course-image"
-          />
-          <div class="course-details">
+    <section class="container courses-section">
+      <div class="courses-head">
+        <div class="courses-head-copy">
+          <p class="courses-kicker">Formazione certificata</p>
+          <h2>I nostri corsi</h2>
+          <p class="courses-subtitle">
+            Percorsi pratici con istruttori qualificati, classi a numero ridotto
+            e certificazioni riconosciute a livello internazionale.
+          </p>
+        </div>
+      </div>
+      <p class="courses-inline-label">Corsi recenti</p>
+      <div class="course-container swiper">
+        <div class="swiper-wrapper">
+          <div class="course-card swiper-slide" data-category="irata">
+            <img
+              src="../img/hero.jpeg"
+              alt="IRATA Livello 1"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
               <img
                 class="course-author"
                 src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
                 alt=""
               />
-              <span>Pino Pierino</span>
-              <span class="course-tag course-green">Alpinista</span>
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-irata">IRATA</span>
             </div>
-          <div class="course-content">
-            <div>
-              <h3 class="course-title">Addetto sistemi di accesso</h3>
-              <p class="course-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
-                saepe porro, explicabo hic distinctio quidem numquam accusamus,
-                quasi necessitatibus alias id, iste laudantium! Deserunt
-                accusantium, nemo inventore sequi repellat quam!
-              </p>
-            </div>
-            <div class="course-info">
-  
-              <span class="course-price">
-                199.99 €
-              </span>
+            <div class="course-content">
               <div>
-              <span>
-                4 ore
-              </span>
-              <span >
-                Torino (To)
-              </span>
-              </div>              
+                <h3 class="course-title">IRATA Livello 1 – Accesso su Fune</h3>
+                <p class="course-description">
+                  Formazione base per lavoratori su fune: sicurezza, uso dei
+                  DPI, tecniche di risalita, discesa e soccorso di base.
+                  Valutazione con esaminatore IRATA accreditato.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >
+                  Certificato IRATA Internazionale
+                </div>
               </div>
-              <button class="course-button">vai ai corsi</button>           
+              <div class="course-info">
+                <span class="course-price">890 €</span>
+                <div>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    >
+                    <span>5 giorni</span>
+                  </span>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    >
+                    <span>Torino (TO)</span>
+                  </span>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div class="course-card swiper-slide" data-category="irata">
+            <img
+              src="../img/hero2.png"
+              alt="IRATA Livello 2"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-irata">IRATA</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  IRATA Livello 2 – Posizionamento su Fune
+                </h3>
+                <p class="course-description">
+                  Tecniche avanzate di posizionamento e lavoro su superfici
+                  verticali. Richiede IRATA L1 valido. Prova pratica con
+                  esaminatore accreditato inclusa.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >
+                  Certificato IRATA Internazionale
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">1.190 €</span>
+                <div>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    >
+                    <span>5 giorni</span>
+                  </span>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    >
+                    <span>Torino (TO)</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card swiper-slide" data-category="irata">
+            <img
+              src="../img/hero3.png"
+              alt="IRATA Livello 3"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-irata">IRATA</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  IRATA Livello 3 – Supervisore su Fune
+                </h3>
+                <p class="course-description">
+                  Massimo livello IRATA: supervisione squadre in quota,
+                  pianificazione operativa e gestione del rischio. Richiede
+                  IRATA L2 valido e documentata esperienza.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >
+                  Certificato IRATA Internazionale
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">1.490 €</span>
+                <div>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    >
+                    <span>5 giorni</span>
+                  </span>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    >
+                    <span>Torino (TO)</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card swiper-slide" data-category="gwo">
+            <img
+              src="../img/hero4.png"
+              alt="GWO Basic Safety Training"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-gwo">GWO</span>
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">GWO Basic Safety Training (BST)</h3>
+                <p class="course-description">
+                  Formazione obbligatoria per l'eolico: pronto soccorso,
+                  antincendio, sicurezza manuale, lavoro in quota e
+                  sopravvivenza in mare. Riconosciuto a livello globale.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >
+                  GWO Certificate
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">750 €</span>
+                <div>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    >
+                    <span>4 giorni</span>
+                  </span>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    >
+                    <span>Torino (TO)</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card swiper-slide" data-category="fune">
+            <img
+              src="../img/hero.jpeg"
+              alt="Addetto Sistemi di Accesso su Fune"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-fune"
+                >Fune D.Lgs.&nbsp;81/08</span
+              >
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  Addetto Sistemi di Accesso e Posizionamento
+                </h3>
+                <p class="course-description">
+                  Corso D.Lgs. 81/08 per l'uso dei sistemi di accesso e
+                  posizionamento su fune. Teoria, pratica su strutture dedicate
+                  e attestato finale rilasciato.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >
+                  Attestato D.Lgs.&nbsp;81/08
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">390 €</span>
+                <div>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    >
+                    <span>2 giorni</span>
+                  </span>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    >
+                    <span>Torino (TO)</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card swiper-slide" data-category="fune">
+            <img
+              src="../img/hero2.png"
+              alt="Addetto Sistemi di Salvataggio su Fune"
+              class="course-image"
+              loading="lazy"
+            />
+            <div class="course-details">
+              <img
+                class="course-author"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+                alt=""
+              />
+              <span>Marco Ferraro</span>
+              <span class="course-tag course-tag-fune"
+                >Fune D.Lgs.&nbsp;81/08</span
+              >
+            </div>
+            <div class="course-content">
+              <div>
+                <h3 class="course-title">
+                  Addetto Sistemi di Salvataggio su Fune
+                </h3>
+                <p class="course-description">
+                  Tecniche di soccorso e salvataggio per operatori su fune.
+                  Conformità D.Lgs. 81/08. Manovre di recupero, uso dei presidi
+                  e simulazioni pratiche incluse.
+                </p>
+                <div class="course-cert-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >workspace_premium</span
+                  >
+                  Attestato D.Lgs.&nbsp;81/08
+                </div>
+              </div>
+              <div class="course-info">
+                <span class="course-price">490 €</span>
+                <div>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >schedule</span
+                    >
+                    <span>2 giorni</span>
+                  </span>
+                  <span class="course-meta-item">
+                    <span
+                      class="material-symbols-outlined course-meta-icon"
+                      aria-hidden="true"
+                      >location_on</span
+                    >
+                    <span>Torino (TO)</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-                 
+        <div class="course-nav" aria-label="Navigazione corsi">
+          <button
+            class="course-nav-btn course-nav-prev"
+            type="button"
+            aria-label="Corso precedente"
+          >
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >arrow_back</span
+            >
+          </button>
+          <button
+            class="course-nav-btn course-nav-next"
+            type="button"
+            aria-label="Corso successivo"
+          >
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >arrow_forward</span
+            >
+          </button>
         </div>
-       
-     </section>
+      </div>
+    </section>
 
     <!-- SEZIONE COME SI SVOLGONO I CORSI (NEW SECTION) -->
 
@@ -122,136 +514,110 @@
 
     <section class="how-courses">
       <div class="container">
-        <div class="percorso-formativo">
+        <div class="percorso-formativo how-head">
+          <p class="how-kicker">Percorso in 4 Step</p>
           <h2>Come Funziona il Percorso Formativo</h2>
+          <p class="how-description">
+            Un metodo progressivo, pratico e certificato per portarti da zero
+            alla piena operativita in quota.
+          </p>
         </div>
 
-        <div class="how-grid">
-          <div class="how-item">
-            <div class="course-icon"></div>
-            <h1>Studia</h1>
-            <p>
-              Acquisisci le conoscenze fondamentali su sicurezza, normative e
-              utilizzo corretto dei DPI.
-            </p>
+        <div class="how-steps">
+          <div class="how-step-row">
+            <div class="how-step-content">
+              <span class="how-step-num">01</span>
+              <div class="how-step-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">menu_book</span>
+              </div>
+              <h3>Studia</h3>
+              <p>
+                Acquisisci le conoscenze fondamentali su sicurezza in quota,
+                normative D.Lgs&nbsp;81/08 e utilizzo corretto dei Dispositivi
+                di Protezione Individuale. Lezioni teoriche con materiale
+                didattico incluso nel corso.
+              </p>
+            </div>
+            <div class="how-step-media">
+              <img
+                src="../img/hero.jpeg"
+                alt="Formazione teorica in aula"
+                loading="lazy"
+              />
+            </div>
           </div>
 
-          <div class="how-item">
-            <div class="course-icon"></div>
-            <h1>Allenati</h1>
-            <p>Svolgi esercitazioni pratiche su strutture dedicate.</p>
+          <div class="how-step-row how-step-row--reverse">
+            <div class="how-step-content">
+              <span class="how-step-num">02</span>
+              <div class="how-step-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">fitness_center</span>
+              </div>
+              <h3>Allenati</h3>
+              <p>
+                Svolgi esercitazioni pratiche intensive su strutture dedicate e
+                simula scenari reali di lavoro in quota. Ogni partecipante opera
+                con attrezzatura certificata sotto la supervisione diretta degli
+                istruttori.
+              </p>
+            </div>
+            <div class="how-step-media">
+              <img
+                src="../img/hero2.png"
+                alt="Esercitazioni pratiche su fune"
+                loading="lazy"
+              />
+            </div>
           </div>
 
-          <div class="how-item">
-            <div class="course-icon"></div>
-            <h1>Supera l'Esame</h1>
-            <p>Affronta la valutazione finale prevista dal corso.</p>
+          <div class="how-step-row">
+            <div class="how-step-content">
+              <span class="how-step-num">03</span>
+              <div class="how-step-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">task_alt</span>
+              </div>
+              <h3>Supera l'Esame</h3>
+              <p>
+                Affronta la valutazione finale prevista dallo standard IRATA o
+                dal D.Lgs&nbsp;81/08. Test teorico e prova pratica valutati da
+                esaminatori accreditati e indipendenti.
+              </p>
+            </div>
+            <div class="how-step-media">
+              <img
+                src="../img/hero3.png"
+                alt="Valutazione esame finale"
+                loading="lazy"
+              />
+            </div>
           </div>
 
-          <div class="how-item">
-            <div class="course-icon"></div>
-            <h1>Ottieni la Certificazione</h1>
-            <p>Ricevi una certificazione riconosciuta.</p>
+          <div class="how-step-row how-step-row--reverse">
+            <div class="how-step-content">
+              <span class="how-step-num">04</span>
+              <div class="how-step-icon" aria-hidden="true">
+                <span class="material-symbols-outlined">workspace_premium</span>
+              </div>
+              <h3>Ottieni la Certificazione</h3>
+              <p>
+                Ricevi una certificazione riconosciuta a livello nazionale e
+                internazionale, spendibile immediatamente nel mercato del lavoro
+                per accedere ai cantieri in quota in Italia e all'estero.
+              </p>
+            </div>
+            <div class="how-step-media">
+              <img
+                src="../img/hero4.png"
+                alt="Certificazione riconosciuta"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- SEZIONE CERTIFICAZIONI PRINCIPALI -->
-
-    <section class="certifications">
-      <div class="container">
-        <h2 class="section-title">Certificazioni Riconosciute</h2>
-
-        <div class="cert-grid">
-          <div class="cert-card">
-            <h3>IRATA</h3>
-            <p class="cert-subtitle">
-              Industrial Rope Access Trade Association
-            </p>
-            <p>
-              Certificazione internazionale per accesso e lavoro su fune.
-              Standard globale riconosciuto in oltre 70 paesi.
-            </p>
-            <a href="formazione.html" class="link-arrow">Scopri il corso →</a>
-          </div>
-
-          <div class="cert-card">
-            <h3>GWO</h3>
-            <p class="cert-subtitle">Global Wind Organisation</p>
-            <p>
-              Formazione specializzata per il settore eolico. Requisito
-              obbligatorio per operare nelle wind farm europee.
-            </p>
-            <a href="formazione.html" class="link-arrow">Scopri il corso →</a>
-          </div>
-
-          <div class="cert-card">
-            <h3>PTI</h3>
-            <p class="cert-subtitle">Petzl Technical Institute</p>
-            <p>
-              Centro ufficiale Petzl in Italia. Formazione su verticalità e
-              sicurezza con equipaggiamento leader mondiale.
-            </p>
-            <a href="formazione.html" class="link-arrow">Scopri il corso →</a>
-          </div>
-
-          <div class="cert-card">
-            <h3>D.Lgs 81/08</h3>
-            <p class="cert-subtitle">Normativa Italiana</p>
-            <p>
-              Compliance completa alla legislazione italiana sulla sicurezza nei
-              lavori in quota e accesso su fune.
-            </p>
-            <a href="formazione.html" class="link-arrow">Scopri il corso →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEZIONE CORSI IN EVIDENZA -->
-
-    
 
     <!-- PROSSIME DATE -->
-
-    <section class="upcoming-dates">
-      <div class="container">
-        <h2 class="section-title">Prossime Date Disponibili</h2>
-
-        <div class="dates-grid">
-          <div class="date-card">
-            <div class="date-month">Luglio</div>
-            <div class="date-info">
-              <h4>IRATA Livello 1</h4>
-              <p>15-19 Luglio 2026</p>
-              <p class="date-location"> Torino</p>
-              <a href="irata.html" class="btn btn-small">Iscriviti</a>
-            </div>
-          </div>
-
-          <div class="date-card">
-            <div class="date-month">Agosto</div>
-            <div class="date-info">
-              <h4>GWO BST</h4>
-              <p>20-24 Agosto 2026</p>
-              <p class="date-location"> Torino</p>
-              <a href="gwo.html" class="btn btn-small">Iscriviti</a>
-            </div>
-          </div>
-
-          <div class="date-card">
-            <div class="date-month">Settembre</div>
-            <div class="date-info">
-              <h4>DPI III Categoria</h4>
-              <p>15-16 Settembre 2026</p>
-              <p class="date-location"> Torino</p>
-              <a href="dpi.html" class="btn btn-small">Iscriviti</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- TESTIMONIANZE -->
 
@@ -259,35 +625,62 @@
       <div class="container">
         <h2 class="section-title">Cosa Dicono di Noi</h2>
 
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">
-              "Formazione di altissimo livello. I formatori sono veramente
-              esperti e disponibili. Consigliato a tutti."
-            </p>
-            <div class="author">Marco R.</div>
-            <div class="company">E-Distribuzione</div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">
-              "Corso perfettamente organizzato, materiale didattico eccellente e
-              pratica intensiva. Tornerò per il livello 2."
-            </p>
-            <div class="author">Andrea B.</div>
-            <div class="company">Edilizia Acrobatica</div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">
-              "Professionalità e competenza. Finalmente una formazione veramente
-              certificata e riconosciuta. Grazie!"
-            </p>
-            <div class="author">Luca M.</div>
-            <div class="company">Manutenzione Industriale</div>
+        <div class="testimonials-swiper swiper">
+          <div class="testimonials-track swiper-wrapper">
+            <div class="testimonial-card swiper-slide">
+              <div class="stars">★★★★★</div>
+              <p class="quote">
+                "Formazione di altissimo livello. I formatori sono veramente
+                esperti e disponibili. Consigliato a tutti."
+              </p>
+              <div class="author">Marco R.</div>
+              <div class="company">E-Distribuzione</div>
+            </div>
+            <div class="testimonial-card swiper-slide">
+              <div class="stars">★★★★★</div>
+              <p class="quote">
+                "Corso perfettamente organizzato, materiale didattico eccellente
+                e pratica intensiva. Tornerò per il livello 2."
+              </p>
+              <div class="author">Andrea B.</div>
+              <div class="company">Edilizia Acrobatica</div>
+            </div>
+            <div class="testimonial-card swiper-slide">
+              <div class="stars">★★★★★</div>
+              <p class="quote">
+                "Professionalità e competenza. Finalmente una formazione
+                veramente certificata e riconosciuta. Grazie!"
+              </p>
+              <div class="author">Luca M.</div>
+              <div class="company">Manutenzione Industriale</div>
+            </div>
+            <div class="testimonial-card swiper-slide">
+              <div class="stars">★★★★★</div>
+              <p class="quote">
+                "Sessioni pratiche ben strutturate e istruttori super preparati.
+                Ho acquisito sicurezza già dal primo giorno."
+              </p>
+              <div class="author">Giulia T.</div>
+              <div class="company">Impianti Nord Ovest</div>
+            </div>
+            <div class="testimonial-card swiper-slide">
+              <div class="stars">★★★★★</div>
+              <p class="quote">
+                "Centro serio e organizzato, attrezzature ottime e supporto
+                costante durante tutto il percorso formativo."
+              </p>
+              <div class="author">Davide C.</div>
+              <div class="company">Servizi Industriali Italia</div>
+            </div>
+            <div class="testimonial-card swiper-slide">
+              <div class="stars">★★★★★</div>
+              <p class="quote">
+                "Ambiente professionale, contenuti concreti e certificazione
+                spendibile subito nel lavoro quotidiano."
+              </p>
+              <div class="author">Sara F.</div>
+              <div class="company">Vertical Team SRL</div>
+            </div>
           </div>
         </div>
       </div>
@@ -357,81 +750,205 @@
         </div>
       </div>
     </section>
-    <!-- CTA FINALE -->
-    <section class="contact">
-      <div class="hero-contact-card">
-        <h3>Richiedi Informazioni</h3>
-        <p>Ricevi il calendario corsi e un preventivo gratuito.</p>
 
-        <form>
-          <input type="text" placeholder="Nome e Cognome" required />
-
-          <input type="email" placeholder="Email" required />
-
-          <input type="tel" placeholder="Telefono" />
-
-          <button type="submit" class="btn-primary">Contattami</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="cta">
+    <section class="cta cta-courses">
       <div class="container">
         <h2>Pronto a Certificarti?</h2>
         <p>
           Scegli il corso che fa per te e unisciti ai nostri formati negli
           ultimi 5 anni.
         </p>
-        <a href="formazione.html" class="btn btn-primary-light"
-          >Scopri Tutti i Corsi</a
-        >
+        <a href="corsi.html" class="btn btn-tertiary">Scopri Tutti i Corsi</a>
       </div>
     </section>
-
     <!-- FOOTER -->
 
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <h3>Dinamiche Verticali</h3>
-            <p>
-              Centro specializzato in formazione per lavori in quota e accesso
-              su fune.
-            </p>
-            <p class="footer-address">📍 Torino, Italia</p>
-          </div>
+    <div id="site-footer"></div>
+    <script>
+      siteFooter();
+    </script>
 
-          <div class="footer-col">
-            <h3>Corsi</h3>
-            <ul>
-              <li><a href="irata.html">IRATA</a></li>
-              <li><a href="gwo.html">GWO</a></li>
-              <li><a href="dpi.html">DPI III Categoria</a></li>
-              <li><a href="quota.html">Lavori in Quota</a></li>
-              <li><a href="confinati.html">Spazi Confinati</a></li>
-            </ul>
-          </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      new Swiper(".course-container", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        grabCursor: true,
+        navigation: {
+          nextEl: ".course-nav-next",
+          prevEl: ".course-nav-prev",
+        },
+      });
 
-        
+      new Swiper(".testimonials-swiper", {
+        loop: true,
+        slidesPerView: "auto",
+        spaceBetween: 24,
+        allowTouchMove: true,
+        speed: 4000,
+        freeMode: {
+          enabled: true,
+          momentum: false,
+        },
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+      });
 
-          <div class="footer-col">
-            <h3>Certificazioni</h3>
-            <a href="irata.html">✓ IRATA Certified</a>
-            <p>✓ GWO Training</p>
-            <p>✓ PTI Italia</p>
-          </div>
-        </div>
+      document.querySelectorAll(".course-card").forEach((card) => {
+        card.tabIndex = 0;
+        card.setAttribute("role", "link");
+        card.setAttribute("aria-label", "Apri dettagli corso");
 
-        <div class="footer-bottom">
-          <p>
-            &copy; 2026 Dinamiche Verticali Formazione. Tutti i diritti
-            riservati.
-          </p>
-        </div>
-      </div>
-    </footer>
+        card.addEventListener("click", () => {
+          window.location.href = "corsi.html";
+        });
 
- 
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            window.location.href = "corsi.html";
+          }
+        });
+      });
+
+      const heroImage = document.querySelector(".hero-climber-image");
+      const heroImages = [
+        "../img/hero2.png",
+        "../img/hero3.png",
+        "../img/hero4.png",
+        "../img/hero.jpeg",
+      ];
+
+      if (heroImage) {
+        let heroImageIndex = 0;
+
+        setInterval(() => {
+          document.dispatchEvent(new Event("heroSlideChange"));
+          heroImage.style.opacity = "0";
+
+          setTimeout(() => {
+            heroImageIndex = (heroImageIndex + 1) % heroImages.length;
+            heroImage.src = heroImages[heroImageIndex];
+            heroImage.onload = () => {
+              heroImage.style.opacity = "1";
+            };
+          }, 220);
+        }, 3800);
+      }
+
+      const heroCornerCard = document.querySelector(".hero-corner-card");
+      const heroCornerAvatar = document.querySelector(".hero-corner-avatar");
+      const heroCornerMeta = document.querySelector(".hero-corner-meta");
+      const heroCornerName = document.querySelector(".hero-corner-name");
+      const heroCornerRole = document.querySelector(".hero-corner-role");
+      const outcomePeople = [
+        {
+          name: "Marco R.",
+          role: "Soccorritore su fune",
+          avatar: "https://randomuser.me/api/portraits/men/34.jpg",
+        },
+        {
+          name: "Elena M.",
+          role: "Tecnico IRATA L1",
+          avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+        },
+        {
+          name: "Luca P.",
+          role: "Addetto Anticaduta",
+          avatar: "https://randomuser.me/api/portraits/men/52.jpg",
+        },
+        {
+          name: "Sara D.",
+          role: "Soccorritrice Industriale",
+          avatar: "https://randomuser.me/api/portraits/women/63.jpg",
+        },
+      ];
+
+      if (
+        heroCornerCard &&
+        heroCornerAvatar &&
+        heroCornerMeta &&
+        heroCornerName &&
+        heroCornerRole
+      ) {
+        let personIndex = 0;
+
+        const rotateCornerCard = () => {
+          heroCornerCard.classList.add("is-fading");
+
+          setTimeout(() => {
+            personIndex = (personIndex + 1) % outcomePeople.length;
+
+            const person = outcomePeople[personIndex];
+
+            heroCornerAvatar.src = person.avatar;
+            heroCornerName.textContent = person.name;
+            heroCornerRole.textContent = person.role;
+            heroCornerCard.classList.remove("is-fading");
+          }, 240);
+        };
+
+        document.addEventListener("heroSlideChange", rotateCornerCard);
+      }
+
+      /* FAQ accordion animato */
+      document.querySelectorAll(".faq-item").forEach(function (details) {
+        details
+          .querySelector("summary")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            var isOpen = details.hasAttribute("open");
+            document
+              .querySelectorAll(".faq-item[open]")
+              .forEach(function (other) {
+                other.removeAttribute("open");
+              });
+            if (!isOpen) {
+              details.setAttribute("open", "");
+            }
+          });
+      });
+
+      /* Counter animato hero */
+      (function () {
+        var el = document.querySelector(".hero-stat-number");
+        if (!el) return;
+        var target = parseInt(el.dataset.target, 10);
+        var suffix = el.dataset.suffix || "";
+        var duration = 1800;
+        var started = false;
+
+        function easeOutExpo(t) {
+          return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+        }
+
+        function runCounter() {
+          if (started) return;
+          started = true;
+          var start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var value = Math.round(easeOutExpo(progress) * target);
+            el.textContent = value.toLocaleString("it-IT") + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            if (entries[0].isIntersecting) {
+              runCounter();
+              observer.disconnect();
+            }
+          },
+          { threshold: 0.5 },
+        );
+        observer.observe(el);
+      })();
+    </script>
   </body>
 </html>

@@ -1,0 +1,351 @@
+/* ── Calendario Corsi ───────────────────────────────────────────────────────── */
+
+/* Hero */
+.cal-hero {
+  padding: 56px 0 44px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cal-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--orange);
+  margin-bottom: 14px;
+}
+
+.cal-hero-label .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.cal-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 12px;
+  line-height: 1.18;
+}
+
+.cal-subtitle {
+  font-size: 1rem;
+  color: var(--gray);
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+/* Banner corso evidenziato */
+.cal-corso-banner {
+  background: #fffbeb;
+  border-bottom: 1px solid #fde68a;
+  padding: 11px 0;
+}
+
+.cal-corso-banner .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cal-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cal-banner-inner .material-symbols-outlined {
+  font-size: 16px;
+  color: #d97706;
+}
+
+.cal-banner-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.cal-banner-clear {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #92400e;
+  text-decoration: underline;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.cal-banner-clear:hover {
+  opacity: 0.7;
+}
+
+/* Filtri categoria */
+.cal-controls {
+  padding: 24px 0 0;
+  background: #fff;
+}
+
+.cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.cal-legend-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition:
+    border-color 0.18s,
+    background 0.18s,
+    color 0.18s;
+  font-family: inherit;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.cal-legend-btn:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.cal-legend-btn.active {
+  background: var(--black);
+  color: #fff;
+  border-color: var(--black);
+}
+
+.cal-legend-btn.active .filter-dot {
+  opacity: 0.65;
+}
+
+/* Sezione calendario */
+.cal-section {
+  padding: 40px 0 80px;
+}
+
+/* ── Override stili FullCalendar ───────────────────────────────────────────── */
+
+#calendar {
+  font-family: "Inter", Arial, sans-serif;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 24px rgba(17, 24, 39, 0.06);
+}
+
+/* Toolbar */
+.fc .fc-toolbar {
+  margin-bottom: 24px !important;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  color: var(--black) !important;
+}
+
+/* Pulsanti toolbar */
+.fc .fc-button {
+  background: #fff !important;
+  border: 1.5px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  padding: 6px 13px !important;
+  box-shadow: none !important;
+  color: var(--black) !important;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s !important;
+}
+
+.fc .fc-button:hover:not(:disabled) {
+  background: #f9fafb !important;
+  border-color: #9ca3af !important;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background: var(--black) !important;
+  border-color: var(--black) !important;
+  color: #fff !important;
+}
+
+.fc .fc-today-button {
+  background: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
+}
+
+.fc .fc-today-button:hover:not(:disabled) {
+  background: var(--orange-dark, #d86d13) !important;
+  border-color: var(--orange-dark, #d86d13) !important;
+}
+
+.fc .fc-today-button:disabled {
+  opacity: 0.35 !important;
+}
+
+/* prev/next come icon-button */
+.fc .fc-prev-button,
+.fc .fc-next-button {
+  padding: 6px 10px !important;
+}
+
+/* Spazio tra i gruppi di pulsanti nella toolbar */
+.fc .fc-toolbar-chunk {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Separa i pulsanti dentro fc-button-group (frecce e mese/lista) */
+.fc .fc-button-group {
+  gap: 4px !important;
+  display: flex !important;
+}
+
+.fc .fc-button-group .fc-button {
+  border-radius: 8px !important;
+}
+
+/* Griglia */
+.fc th {
+  border-color: #f3f4f6 !important;
+}
+
+.fc td {
+  border-color: #f3f4f6 !important;
+}
+
+.fc .fc-col-header-cell-cushion {
+  font-weight: 600 !important;
+  color: #374151 !important;
+  font-size: 0.78rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  text-decoration: none !important;
+  padding: 10px 6px !important;
+}
+
+.fc .fc-daygrid-day-number {
+  color: #6b7280 !important;
+  font-size: 0.82rem !important;
+  text-decoration: none !important;
+  padding: 6px 8px !important;
+}
+
+.fc .fc-day-today {
+  background: rgba(245, 130, 32, 0.04) !important;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+  color: var(--orange) !important;
+  font-weight: 700 !important;
+}
+
+.fc .fc-daygrid-day.fc-day-other .fc-daygrid-day-number {
+  opacity: 0.35 !important;
+}
+
+/* Eventi */
+.fc-event {
+  border-radius: 5px !important;
+  border: none !important;
+  padding: 2px 6px !important;
+  cursor: pointer !important;
+  transition:
+    opacity 0.15s,
+    filter 0.15s !important;
+}
+
+.fc-event:hover {
+  filter: brightness(0.88) !important;
+}
+
+.fc .fc-daygrid-event {
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  margin-bottom: 2px !important;
+}
+
+/* Vista lista */
+.fc .fc-list-event:hover td {
+  background: #f9fafb !important;
+  cursor: pointer;
+}
+
+.fc .fc-list-event-title a {
+  color: var(--black) !important;
+  font-weight: 500 !important;
+  font-size: 0.88rem !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  text-decoration: none !important;
+}
+
+.fc .fc-list-event-dot {
+  border-radius: 50% !important;
+}
+
+.fc .fc-list-day-cushion {
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  background: #f9fafb !important;
+  color: #374151 !important;
+}
+
+.fc .fc-list-empty {
+  font-family: "Inter", Arial, sans-serif !important;
+  color: var(--gray) !important;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 700px) {
+  .cal-hero {
+    padding: 40px 0 32px;
+  }
+
+  .fc .fc-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .fc .fc-toolbar-chunk {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .cal-section {
+    padding: 32px 0 60px;
+  }
+}

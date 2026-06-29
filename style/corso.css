@@ -1,0 +1,369 @@
+/* ── Pagine singole corso ─────────────────────────────────────────────────── */
+
+/* Hero */
+.course-page-hero {
+  padding: 56px 0 44px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.course-page-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+  color: #fff;
+}
+
+.course-page-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 28px;
+  line-height: 1.18;
+}
+
+.course-page-kpi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.course-kpi-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.course-kpi-icon {
+  font-size: 20px;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+.course-kpi-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  display: block;
+  line-height: 1;
+  margin-bottom: 1px;
+}
+
+.course-kpi-value {
+  font-weight: 700;
+  color: var(--black);
+  font-size: 0.95rem;
+}
+
+/* ── Layout 2 colonne ─────────────────────────────────────────────────────── */
+
+.course-detail-section {
+  padding: 56px 0 80px;
+}
+
+.course-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── Contenuto principale ─────────────────────────────────────────────────── */
+
+.course-main h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 40px 0 12px;
+}
+
+.course-main h2:first-child {
+  margin-top: 0;
+}
+
+.course-main p {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 14px;
+}
+
+.course-main ul,
+.course-main ol {
+  padding-left: 20px;
+  margin-bottom: 18px;
+}
+
+.course-main li {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+/* Moduli programma */
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 4px;
+}
+
+.program-module {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.program-module:last-child {
+  border-bottom: none;
+}
+
+.program-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #fff7ed;
+  color: var(--orange);
+  font-size: 0.68rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.program-module h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 3px;
+}
+
+.program-module p {
+  font-size: 0.84rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Sidebar prenotazione ─────────────────────────────────────────────────── */
+
+.course-sidebar {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.course-booking-card {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 4px 24px rgba(17, 24, 39, 0.07);
+}
+
+.course-booking-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+
+/* Session cards */
+.session-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.session-card:last-of-type {
+  border-bottom: none;
+}
+
+.session-date-block {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 7px 10px;
+  text-align: center;
+  min-width: 48px;
+  flex-shrink: 0;
+}
+
+.session-month {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.session-day {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.1;
+}
+
+.session-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.session-range {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+
+.session-spots {
+  font-size: 0.74rem;
+  color: #6b7280;
+}
+
+.session-spots.few {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.session-price-tag {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.course-cta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.course-cta-block .btn {
+  text-align: center;
+  display: block;
+}
+
+.course-cta-block .btn-secondary {
+  background: transparent;
+  border: 2px solid var(--black);
+  color: var(--black);
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.course-cta-block .btn-secondary:hover {
+  background: var(--black);
+  color: #fff;
+}
+
+.course-cal-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    border-color 0.18s,
+    color 0.18s;
+  font-family: inherit;
+}
+
+.course-cal-link:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.course-cal-link .material-symbols-outlined {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Back nav */
+.course-back {
+  margin-top: 52px;
+  padding-top: 28px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.course-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 22px;
+  border: 2px solid var(--black);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--black);
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.course-back-btn:hover {
+  background: var(--black);
+  color: #fff;
+}
+
+.course-back-btn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .course-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-sidebar {
+    position: static;
+  }
+
+  .course-booking-card {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 600px) {
+  .course-page-title {
+    font-size: 1.7rem;
+  }
+
+  .course-page-kpi {
+    gap: 16px;
+  }
+}
