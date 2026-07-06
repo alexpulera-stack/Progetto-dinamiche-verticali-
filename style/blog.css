@@ -28,7 +28,7 @@
 
 .blog-section {
   padding: 8px 0 72px;
-  background: #f9fafb;
+  background: var(--white);
 }
 
 .blog-section .blog-container {
@@ -247,7 +247,7 @@ a.blog-card {
 }
 
 .btn-secondary-outline .material-symbols-outlined {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */

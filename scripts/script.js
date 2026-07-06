@@ -12,6 +12,26 @@ if (search) {
   });
 }
 
+/* Attiva un filtro su corsi.html se è presente il parametro `filter` (es. corsi.html?filter=irata) */
+document.addEventListener("DOMContentLoaded", function () {
+  var page = window.location.pathname.split("/").pop();
+  if (page !== "corsi.html") return;
+  var params = new URLSearchParams(window.location.search);
+  var f =
+    params.get("filter") ||
+    (window.location.hash ? window.location.hash.replace("#", "") : null);
+  if (!f) return;
+  var btn = document.querySelector(
+    '.courses-filter-btn[data-filter="' + f + '"]',
+  );
+  if (btn) {
+    btn.click();
+    var controls = document.querySelector(".formazione-controls");
+    if (controls && typeof controls.scrollIntoView === "function")
+      controls.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
 const buttons = document.querySelectorAll(".filter-btn");
 
 buttons.forEach((button) => {
@@ -148,25 +168,19 @@ function siteFooter(base) {
       <div class="footer-col">
         <h3>Corsi</h3>
         <ul>
-          <li><a href="${base}irata.html" class="footer-course-pill" style="--cat:#1e40af;"><span class="filter-dot" aria-hidden="true"></span>IRATA</a></li>
-          <li><a href="${base}gwo.html" class="footer-course-pill" style="--cat:#db2777;"><span class="filter-dot" aria-hidden="true"></span>GWO</a></li>
-          <li><a href="${base}dpi.html" class="footer-course-pill" style="--cat:#0891b2;"><span class="filter-dot" aria-hidden="true"></span>DPI III Categoria</a></li>
-          <li><a href="${base}quota.html" class="footer-course-pill" style="--cat:#ca8a04;"><span class="filter-dot" aria-hidden="true"></span>Lavori in Quota</a></li>
-          <li><a href="${base}confinati.html" class="footer-course-pill" style="--cat:#dc2626;"><span class="filter-dot" aria-hidden="true"></span>Spazi Confinati</a></li>
+          <li><a href="${base}corsi.html?filter=irata" class="footer-course-pill" style="--cat:#1e40af;"><span class="filter-dot" aria-hidden="true"></span>IRATA</a></li>
+          <li><a href="${base}corsi.html?filter=gwo" class="footer-course-pill" style="--cat:#db2777;"><span class="filter-dot" aria-hidden="true"></span>GWO</a></li>
+          <li><a href="${base}corsi.html?filter=accreditati" class="footer-course-pill" style="--cat:#0891b2;"><span class="filter-dot" aria-hidden="true"></span>DPI III Categoria</a></li>
+          <li><a href="${base}corsi.html?filter=quota" class="footer-course-pill" style="--cat:#ca8a04;"><span class="filter-dot" aria-hidden="true"></span>Lavori in Quota</a></li>
+          <li><a href="${base}corsi.html?filter=soccorso" class="footer-course-pill" style="--cat:#dc2626;"><span class="filter-dot" aria-hidden="true"></span>Spazi Confinati</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h3>Certificazioni</h3>
         <div class="footer-cert-logos">
-          <a href="https://www.dvformazione.it/corsi-petzl-dinamiche-verticali.html" target="_blank" rel="noopener noreferrer">
-            <img src="https://www.dvformazione.it/img/loghi/logo-petzl-technical-institute.jpg" alt="Petzl Technical Institute" class="footer-cert-logo">
-          </a>
-          <a href="https://www.dvformazione.it/corsi-irata-dinamiche-verticali.html" target="_blank" rel="noopener noreferrer">
-            <img src="https://www.dvformazione.it/img/loghi/logo-irata-international.jpg" alt="IRATA International" class="footer-cert-logo">
-          </a>
-          <a href="https://www.dvformazione.it/gwo-formazione-certificazione.html" target="_blank" rel="noopener noreferrer">
-            <img src="https://www.dvformazione.it/img/loghi/logo-global-wind-organisation.jpg" alt="Global Wind Organisation" class="footer-cert-logo">
-          </a>
+          <img src="https://www.dvformazione.it/img/loghi/logo-petzl-technical-institute.jpg" alt="Petzl Technical Institute" class="footer-cert-logo">
+          <img src="https://www.dvformazione.it/img/loghi/logo-irata-international.jpg" alt="IRATA International" class="footer-cert-logo">
+          <img src="https://www.dvformazione.it/img/loghi/logo-global-wind-organisation.jpg" alt="Global Wind Organisation" class="footer-cert-logo">
         </div>
       </div>
     </div>

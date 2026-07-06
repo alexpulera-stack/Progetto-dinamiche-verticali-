@@ -35,6 +35,13 @@
     max-width: 600px;
     width: 100%;
   }
+  /* Slightly reduce certification logos and spacing on medium screens */
+  .hero-certs {
+    gap: 36px;
+  }
+  .hero-cert-logo {
+    max-width: 110px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -100,7 +107,7 @@
 
   .nav-icon {
     display: block !important;
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
   .nav-links a {
@@ -165,6 +172,13 @@
   .hero-buttons {
     justify-content: center;
   }
+  /* Make certification logos smaller and closer on narrow screens */
+  .hero-certs {
+    gap: 28px;
+  }
+  .hero-cert-logo {
+    max-width: 96px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -221,6 +235,14 @@
     margin-top: 40px;
   }
 
+  /* Mobile tablets: further reduce cert logos */
+  .hero-certs {
+    gap: 24px;
+  }
+  .hero-cert-logo {
+    max-width: 80px;
+  }
+
   .hero-corner-card {
     width: 126px;
   }
@@ -250,6 +272,15 @@
 
   .hero-certs-wrap {
     margin-top: 30px;
+  }
+
+  /* Small phones: stack or shrink cert logos to fit comfortably */
+  .hero-certs {
+    gap: 16px;
+    justify-content: center;
+  }
+  .hero-cert-logo {
+    max-width: 56px;
   }
 
   .hero-corner-card {
