@@ -133,7 +133,7 @@
 }
 
 .contact-submit-btn .material-symbols-outlined {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 /* ── Info azienda ─────────────────────────────────────────────────────────── */
@@ -173,7 +173,7 @@
 }
 
 .contact-info-icon {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--orange);
   flex-shrink: 0;
   margin-top: 2px;
@@ -247,7 +247,7 @@
 }
 
 .contact-channel-btn .material-symbols-outlined {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .contact-channel-wa {

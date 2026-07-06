@@ -41,7 +41,7 @@
 }
 
 .course-kpi-icon {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--orange);
   flex-shrink: 0;
 }
@@ -303,7 +303,7 @@
 }
 
 .course-cal-link .material-symbols-outlined {
-  font-size: 16px;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 
@@ -339,7 +339,7 @@
 }
 
 .course-back-btn .material-symbols-outlined {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */

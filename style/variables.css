@@ -10,9 +10,34 @@
   --white: #ffffff;
 }
 
+/* Base font sizing for scalable typography using rem.
+   Adjust the root size at breakpoints so `rem`-based text scales on small screens. */
+html {
+  font-size: 100%; /* 16px default */
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 93.75%;
+  } /* ~15px */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  } /* ~14px */
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 81.25%;
+  } /* ~13px */
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  font-size: 1rem; /* ensure base text uses rem */
   background: white;
   color: var(--black);
 }
