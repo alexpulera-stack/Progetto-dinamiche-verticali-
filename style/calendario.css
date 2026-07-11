@@ -6,15 +6,20 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
+.cal-hero .container {
+  text-align: center;
+}
+
 .cal-hero-label {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--orange);
+  color: var(--orange-dark, #d86d13);
   margin-bottom: 14px;
 }
 
@@ -35,6 +40,37 @@
   color: var(--gray);
   max-width: 520px;
   line-height: 1.6;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cal-stats {
+  margin: 24px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 980px;
+}
+
+.cal-stat-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.cal-stat-card p {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.cal-stat-card strong {
+  font-size: 1.05rem;
+  color: #111827;
 }
 
 /* Banner corso evidenziato */
@@ -95,6 +131,35 @@
   align-items: center;
   padding-bottom: 24px;
   border-bottom: 1px solid #f3f4f6;
+}
+
+.cal-guide {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cal-guide-item {
+  border: 1px solid #f1f5f9;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.cal-guide-item .material-symbols-outlined {
+  color: var(--orange);
+  font-size: 1rem;
+  margin-top: 1px;
+}
+
+.cal-guide-item p {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #4b5563;
 }
 
 .cal-legend-btn {
@@ -331,6 +396,11 @@
 @media (max-width: 700px) {
   .cal-hero {
     padding: 40px 0 32px;
+  }
+
+  .cal-stats,
+  .cal-guide {
+    grid-template-columns: 1fr;
   }
 
   .fc .fc-toolbar {

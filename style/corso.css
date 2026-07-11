@@ -2,7 +2,7 @@
 
 /* Hero */
 .course-page-hero {
-  padding: 56px 0 44px;
+  padding: 64px 0 48px;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -68,9 +68,13 @@
 
 .course-detail-grid {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 36px;
   align-items: start;
+}
+
+.course-detail-grid > * {
+  min-width: 0;
 }
 
 /* ── Contenuto principale ─────────────────────────────────────────────────── */
@@ -157,47 +161,64 @@
 /* ── Sidebar prenotazione ─────────────────────────────────────────────────── */
 
 .course-sidebar {
-  position: sticky;
-  top: 80px;
+  position: static;
+  order: 2;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
+  min-width: 0;
+}
+
+.course-main {
+  order: 1;
 }
 
 .course-booking-card {
   background: #fff;
-  border: 1.5px solid #e5e7eb;
+  border: 1.5px solid #d7dde8;
   border-radius: 20px;
-  padding: 26px;
-  box-shadow: 0 4px 24px rgba(17, 24, 39, 0.07);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+  width: 100%;
+  min-width: 0;
 }
 
 .course-booking-card h3 {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 1.22rem;
+  font-weight: 800;
   color: var(--black);
-  margin-bottom: 16px;
+  margin-bottom: 4px;
+}
+
+.course-booking-sub {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 18px;
+  max-width: 65ch;
 }
 
 /* Session cards */
 .session-card {
+  background: #fff;
+  border: 1px solid #dce3ec;
+  border-radius: 14px;
+  padding: 14px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid #f3f4f6;
 }
 
-.session-card:last-of-type {
-  border-bottom: none;
+.course-booking-card--enhanced .session-card {
+  min-height: 100%;
 }
 
 .session-date-block {
-  background: #f9fafb;
+  background: #f6f9fd;
   border-radius: 10px;
-  padding: 7px 10px;
+  padding: 8px 12px;
   text-align: center;
-  min-width: 48px;
+  min-width: 56px;
   flex-shrink: 0;
 }
 
@@ -212,7 +233,7 @@
 
 .session-day {
   display: block;
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   font-weight: 800;
   color: var(--black);
   line-height: 1.1;
@@ -224,41 +245,141 @@
 }
 
 .session-range {
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.98rem;
+  font-weight: 700;
   color: var(--black);
-  margin-bottom: 2px;
+  margin-bottom: 8px;
 }
 
 .session-spots {
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   color: #6b7280;
 }
 
 .session-spots.few {
-  color: #dc2626;
-  font-weight: 600;
+  color: #166534;
+  font-weight: 700;
 }
 
 .session-price-tag {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--black);
   white-space: nowrap;
 }
 
+.course-booking-card--enhanced .session-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.course-booking-card--enhanced .session-info {
+  min-width: 0;
+}
+
+.session-spots-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #edf7ef;
+  color: #166534;
+  font-weight: 700;
+}
+
+.session-spots-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.course-booking-card--enhanced .session-price-tag {
+  align-self: start;
+  margin-top: 3px;
+}
+
+.course-booking-card--enhanced .session-enroll-btn {
+  grid-column: 1 / -1;
+  width: 100%;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.course-booking-card--enhanced .course-cta-block {
+  margin-top: 12px;
+}
+
+.course-primary-fallback {
+  display: none !important;
+}
+
+.course-info-hidden {
+  display: none !important;
+}
+
+.course-booking-card--enhanced .session-card {
+  margin-bottom: 0;
+}
+
+.course-booking-card--enhanced {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.course-booking-card--enhanced > * {
+  min-width: 0;
+}
+
+.course-booking-card--enhanced h3,
+.course-booking-card--enhanced .course-booking-sub,
+.course-booking-card--enhanced .course-cta-block,
+.course-booking-card--enhanced .course-cal-link {
+  grid-column: 1 / -1;
+}
+
+.course-booking-card--enhanced .enroll-stay-box {
+  border: none;
+  background: transparent;
+  margin-top: 8px;
+}
+
+.course-booking-card--enhanced .course-cta-block .btn-secondary {
+  border-color: #cfd7e2;
+  color: #334155;
+  font-weight: 600;
+}
+
+.course-booking-card--enhanced .course-cta-block .btn-secondary:hover {
+  border-color: #111827;
+  color: #111827;
+  background: #f8fafc;
+}
+
 .course-cta-block {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 18px;
-  padding-top: 18px;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid #f3f4f6;
+  min-width: 0;
 }
 
 .course-cta-block .btn {
   text-align: center;
   display: block;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 0.95rem;
 }
 
 .course-cta-block .btn-secondary {
@@ -283,63 +404,528 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  min-width: 0;
   gap: 7px;
-  padding: 10px 20px;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 8px;
-  color: #6b7280;
-  font-size: 0.85rem;
-  font-weight: 500;
+  padding: 9px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  color: #64748b;
+  font-size: 0.84rem;
+  font-weight: 600;
   text-decoration: none;
   transition:
     border-color 0.18s,
-    color 0.18s;
+    color 0.18s,
+    background 0.18s;
   font-family: inherit;
 }
 
 .course-cal-link:hover {
   border-color: var(--orange);
   color: var(--orange);
+  background: #fffaf3;
 }
 
 .course-cal-link .material-symbols-outlined {
   font-size: 1rem;
   flex-shrink: 0;
+  color: currentColor;
+  transition: color 0.18s;
 }
 
 /* Back nav */
 .course-back {
-  margin-top: 52px;
-  padding-top: 28px;
-  border-top: 1px solid #e5e7eb;
+  margin-top: 20px;
+  padding-top: 0;
+  border-top: none;
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.course-back--top {
+  margin-top: 0;
+  margin-bottom: 22px;
 }
 
 .course-back-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 11px 22px;
-  border: 2px solid var(--black);
-  border-radius: 8px;
+  padding: 8px 13px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
   font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--black);
+  font-size: 0.85rem;
+  color: #111827;
+  background: #fff;
   text-decoration: none;
   transition:
-    background 0.2s,
-    color 0.2s;
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
 }
 
 .course-back-btn:hover {
-  background: var(--black);
-  color: #fff;
+  border-color: var(--orange);
+  color: var(--orange);
 }
 
 .course-back-btn .material-symbols-outlined {
-  font-size: 1.125rem;
+  font-size: 1rem;
+  color: currentColor;
+  line-height: 1;
+}
+
+/* Enrollment modal */
+body.enroll-modal-open {
+  overflow: hidden;
+}
+
+.enroll-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+}
+
+.enroll-modal.is-open {
+  display: block;
+}
+
+.enroll-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+}
+
+.enroll-modal-dialog {
+  position: relative;
+  width: min(1040px, calc(100% - 32px));
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(17, 24, 39, 0.25);
+  border: 1px solid #e5e7eb;
+  padding: 26px;
+}
+
+.enroll-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enroll-modal-head {
+  margin-bottom: 18px;
+}
+
+.enroll-modal-kicker {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.enroll-modal-head h3 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.enroll-modal-head p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.enroll-modal-body {
+  display: block;
+}
+
+.enroll-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.enroll-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.enroll-modal-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.enroll-modal-form input,
+.enroll-modal-form select,
+.enroll-modal-form textarea {
+  font: inherit;
+  font-size: 0.94rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #111827;
+  background: #fff;
+}
+
+.enroll-modal-form textarea {
+  resize: vertical;
+}
+
+.enroll-modal-form input:focus,
+.enroll-modal-form select:focus,
+.enroll-modal-form textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(245, 130, 32, 0.18);
+}
+
+.enroll-session-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.enroll-session-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 0;
+}
+
+.enroll-session-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.enroll-session-option {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  color: #111827;
+  text-align: left;
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s,
+    background 0.18s;
+}
+
+.enroll-session-option-date {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.enroll-session-option-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.35;
+}
+
+.enroll-session-option:hover {
+  border-color: #f8b980;
+  background: #fffaf3;
+}
+
+.enroll-session-option:focus-visible {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(245, 130, 32, 0.18);
+}
+
+.enroll-session-option.is-selected {
+  border-color: var(--orange);
+  background: #fff7ec;
+  box-shadow: 0 0 0 3px rgba(245, 130, 32, 0.14);
+}
+
+.enroll-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.enroll-modal-actions .btn {
+  border-radius: 10px;
+}
+
+.enroll-modal-actions .btn-secondary {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  color: #111827;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.enroll-stay-box {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 14px;
+}
+
+.enroll-stay-box--in-page {
+  margin-top: 26px;
+  margin-bottom: 8px;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.enroll-stay-box--cta {
+  margin-top: 12px;
+  border: 1px solid #dde5ef;
+  border-radius: 12px;
+  background: #f7fafc;
+  padding: 14px;
+}
+
+.enroll-stay-summary h4 {
+  font-size: 1rem;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.enroll-stay-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.enroll-stay-summary-copy {
+  min-width: 0;
+}
+
+.enroll-stay-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #d5dde8;
+  background: #fff;
+  color: #1f2937;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 7px 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.enroll-stay-toggle .material-symbols-outlined {
+  font-size: 1rem;
+  transition: transform 0.22s ease;
+}
+
+.enroll-stay-box.is-expanded .enroll-stay-toggle .material-symbols-outlined {
+  transform: rotate(180deg);
+}
+
+.enroll-stay-summary .enroll-stay-sub {
+  font-size: 0.86rem;
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+.enroll-stay-panel {
+  margin-top: 10px;
+  max-height: 2200px;
+  opacity: 1;
+  overflow: hidden;
+  transition:
+    max-height 0.32s ease,
+    opacity 0.22s ease,
+    margin-top 0.22s ease;
+}
+
+.enroll-stay-box.is-collapsed .enroll-stay-panel {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  pointer-events: none;
+}
+
+.enroll-stay-box--in-page .enroll-stay-scroller {
+  grid-auto-columns: minmax(240px, 320px);
+}
+
+.enroll-stay-box h4 {
+  font-size: 1rem;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.enroll-stay-sub {
+  font-size: 0.83rem;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.enroll-stay-group {
+  margin-top: 12px;
+}
+
+.enroll-stay-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.enroll-stay-group h5 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9a3412;
+  margin-bottom: 0;
+}
+
+.enroll-stay-scroller {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(210px, 1fr);
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.enroll-stay-swiper {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.enroll-stay-swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.enroll-stay-swiper .swiper-slide {
+  height: auto;
+  width: min(82vw, 320px);
+}
+
+.enroll-stay-card {
+  background: #fff;
+  border: 1px solid #eceff3;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.enroll-stay-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.enroll-stay-card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.enroll-stay-card-body strong {
+  font-size: 0.9rem;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.enroll-stay-card-body span {
+  font-size: 0.78rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.enroll-stay-meta {
+  font-size: 0.72rem;
+  color: #374151;
+  font-weight: 600;
+  margin: 0;
+}
+
+.enroll-stay-benefit {
+  font-size: 0.72rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.enroll-stay-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.enroll-stay-card-actions a {
+  font-size: 0.72rem;
+  text-decoration: none;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition:
+    border-color 0.18s,
+    color 0.18s,
+    background 0.18s;
+}
+
+.enroll-stay-card-actions a .material-symbols-outlined {
+  font-size: 0.95rem;
+  line-height: 1;
+  color: currentColor;
+  transition: color 0.18s;
+}
+
+.enroll-stay-card-actions a:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: #fffaf3;
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
@@ -351,19 +937,130 @@
 
   .course-sidebar {
     position: static;
+    order: 2;
   }
 
   .course-booking-card {
-    max-width: 480px;
+    max-width: none;
+  }
+
+  .course-booking-card--enhanced {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .enroll-modal-dialog {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 18px;
+    border-radius: 14px;
+    max-height: calc(100vh - 20px);
+  }
+
+  .enroll-modal-body {
+    display: block;
+  }
+
+  .enroll-modal-actions .btn,
+  .enroll-modal-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
   }
 }
 
 @media (max-width: 600px) {
+  .course-page-hero {
+    padding: 56px 0 40px;
+  }
+
   .course-page-title {
     font-size: 1.7rem;
   }
 
   .course-page-kpi {
     gap: 16px;
+  }
+
+  .enroll-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .enroll-session-options {
+    grid-template-columns: 1fr;
+  }
+
+  .course-booking-card {
+    padding: 18px;
+  }
+
+  .course-booking-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .course-booking-sub {
+    font-size: 0.9rem;
+  }
+
+  .course-booking-card--enhanced .session-card {
+    grid-template-columns: auto 1fr;
+  }
+
+  .course-booking-card--enhanced .session-price-tag {
+    grid-column: 1 / -1;
+    margin-top: -4px;
+    font-size: 1.1rem;
+  }
+
+  .course-booking-card--enhanced .session-enroll-btn {
+    font-size: 0.95rem;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .course-back--top {
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+
+  .course-back-btn {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .enroll-stay-box--cta .enroll-stay-scroller,
+  .enroll-stay-box--in-page .enroll-stay-scroller {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    padding-bottom: 8px;
+  }
+
+  .enroll-stay-box--cta .enroll-stay-swiper,
+  .enroll-stay-box--in-page .enroll-stay-swiper {
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+  .enroll-stay-box--in-page {
+    padding: 0;
+  }
+
+  .enroll-stay-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .enroll-stay-toggle {
+    align-self: flex-start;
+  }
+
+  .enroll-stay-box--in-page .enroll-stay-card {
+    flex: 0 0 min(82vw, 320px);
+  }
+
+  .enroll-stay-box--cta .enroll-stay-card {
+    flex: 0 0 min(82vw, 320px);
   }
 }

@@ -34,17 +34,27 @@
     <!-- HERO -->
     <div class="cal-hero">
       <div class="container">
-        <div class="cal-hero-label">
-          <span class="material-symbols-outlined" aria-hidden="true"
-            >calendar_month</span
-          >
-          Calendario
-        </div>
+        <div class="cal-hero-label">Calendario</div>
         <h1 class="cal-title">Tutte le sessioni formative</h1>
         <p class="cal-subtitle">
           Consulta le date disponibili per ogni corso. Clicca su un evento per
           aprire il dettaglio e iscriverti.
         </p>
+
+        <div class="cal-stats" aria-label="Riepilogo calendario">
+          <article class="cal-stat-card">
+            <p>Prossima sessione</p>
+            <strong id="calNextSession">-</strong>
+          </article>
+          <article class="cal-stat-card">
+            <p>Corsi attivi</p>
+            <strong id="calCoursesCount">-</strong>
+          </article>
+          <article class="cal-stat-card">
+            <p>Sessioni pubblicate</p>
+            <strong id="calSessionsCount">-</strong>
+          </article>
+        </div>
       </div>
     </div>
 
@@ -107,6 +117,27 @@
             <span class="filter-dot" aria-hidden="true"></span>Accreditati
           </button>
         </div>
+
+        <div class="cal-guide" aria-label="Come usare il calendario">
+          <div class="cal-guide-item">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >tune</span
+            >
+            <p>Usa i filtri per categoria e trova il corso piu adatto.</p>
+          </div>
+          <div class="cal-guide-item">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >ads_click</span
+            >
+            <p>Clicca sull'evento per aprire direttamente la pagina corso.</p>
+          </div>
+          <div class="cal-guide-item">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >view_agenda</span
+            >
+            <p>Passa a vista Lista per una panoramica rapida mese per mese.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -126,6 +157,48 @@
       (function () {
         var params = new URLSearchParams(window.location.search);
         var activeCorso = params.get("corso");
+
+        function updateStats() {
+          var totalCorsi = CORSI.length;
+          var totalSessioni = CORSI.reduce(function (acc, c) {
+            return acc + (c.sessioni ? c.sessioni.length : 0);
+          }, 0);
+
+          var today = new Date();
+          today.setHours(0, 0, 0, 0);
+
+          var prossima = CORSI.flatMap(function (c) {
+            return (c.sessioni || []).map(function (s) {
+              return new Date(s.inizio + "T00:00:00");
+            });
+          })
+            .filter(function (d) {
+              return d >= today;
+            })
+            .sort(function (a, b) {
+              return a - b;
+            })[0];
+
+          var nextLabel = document.getElementById("calNextSession");
+          var coursesCountLabel = document.getElementById("calCoursesCount");
+          var sessionsCountLabel = document.getElementById("calSessionsCount");
+
+          if (nextLabel) {
+            nextLabel.textContent = prossima
+              ? prossima.toLocaleDateString("it-IT", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                })
+              : "N/D";
+          }
+          if (coursesCountLabel)
+            coursesCountLabel.textContent = String(totalCorsi);
+          if (sessionsCountLabel)
+            sessionsCountLabel.textContent = String(totalSessioni);
+        }
+
+        updateStats();
 
         /* ── Costruisce array eventi FullCalendar ──────────────────────── */
         function buildEventi(cat) {
