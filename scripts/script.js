@@ -54,21 +54,54 @@ buttons.forEach((button) => {
 
 function navBar(base, activePage) {
   base = base || "";
-  const currentPage =
+  const currentPath = window.location.pathname.toLowerCase();
+  const currentPage = (
     activePage ||
-    (window.location.pathname.split("/").pop() || "home.html").toLowerCase();
+    window.location.pathname.split("/").pop() ||
+    "index.html"
+  ).toLowerCase();
+  const isRootPage =
+    currentPath === "/" ||
+    currentPath.endsWith("/index.html") ||
+    currentPath.endsWith("/");
+  const isBlogPage = currentPath.includes("/site/blog/");
+  const isSitePage = currentPath.includes("/site/") && !isBlogPage;
+
+  const resolveHref = (href) => {
+    if (href === "home.html") {
+      if (isRootPage) return "index.html";
+      if (isBlogPage) return "../../index.html";
+      if (isSitePage) return "../index.html";
+      return `${base}../index.html`;
+    }
+
+    if (isRootPage) return `site/${href}`;
+    if (isSitePage) return `${base}${href}`;
+    if (isBlogPage) return `${base}${href}`;
+    return `${base}${href}`;
+  };
 
   const navLink = (href, label, icon) => {
-    const isActive = currentPage === href;
-    return `<li><a href="${base}${href}"${isActive ? ' class="is-active" aria-current="page"' : ""}>
+    const resolvedHref = resolveHref(href);
+    const isActive =
+      currentPage === href ||
+      (href === "home.html" && currentPage === "index.html");
+
+    return `<li><a href="${resolvedHref}"${isActive ? ' class="is-active" aria-current="page"' : ""}>
       <span class="material-symbols-outlined nav-icon" aria-hidden="true">${icon}</span>
       <span class="nav-label">${label}</span>
     </a></li>`;
   };
 
+  const logoSrc = isRootPage
+    ? "img/logo.svg"
+    : isBlogPage
+      ? "../../img/logo.svg"
+      : `${base}../img/logo.svg`;
+
   document.querySelector("body").innerHTML = `<nav class="navbar">
       <div class="container">
-        <img src="${base}../img/logo.svg" class="logo" alt="Dinamiche Verticali" />
+        <img src="${logoSrc}" class="logo" alt="Dinamiche Verticali" />
         <ul class="nav-links" id="mobile-menu">
           ${navLink("home.html", "Home", "home")}
           ${navLink("corsi.html", "Corsi", "school")}
@@ -674,6 +707,34 @@ function pillarRedirectInit() {
 
 function siteFooter(base) {
   base = base || "";
+  const currentPath = window.location.pathname.toLowerCase();
+  const isRootPage =
+    currentPath === "/" ||
+    currentPath.endsWith("/index.html") ||
+    currentPath.endsWith("/");
+  const isBlogPage = currentPath.includes("/site/blog/");
+  const isSitePage = currentPath.includes("/site/") && !isBlogPage;
+
+  const resolveHref = (href) => {
+    if (href === "home.html") {
+      if (isRootPage) return "index.html";
+      if (isBlogPage) return "../../index.html";
+      if (isSitePage) return "../index.html";
+      return `${base}../index.html`;
+    }
+
+    if (isRootPage) return `site/${href}`;
+    if (isSitePage) return `${base}${href}`;
+    if (isBlogPage) return `${base}${href}`;
+    return `${base}${href}`;
+  };
+
+  const homeHref = resolveHref("home.html");
+  const logoSrc = isRootPage
+    ? "img/logo.svg"
+    : isBlogPage
+      ? "../../img/logo.svg"
+      : `${base}../img/logo.svg`;
   const el = document.getElementById("site-footer");
   if (!el) return;
   el.outerHTML = `
@@ -681,8 +742,8 @@ function siteFooter(base) {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col footer-col--company">
-        <a href="${base}home.html" class="footer-brand" aria-label="Dinamiche Verticali">
-          <img src="${base}../img/logo.svg" alt="Dinamiche Verticali" class="footer-brand-logo">
+        <a href="${homeHref}" class="footer-brand" aria-label="Dinamiche Verticali">
+          <img src="${logoSrc}" alt="Dinamiche Verticali" class="footer-brand-logo">
         </a>
         <p class="footer-company-note">Centro specializzato in formazione per lavori in quota e accesso su fune.</p>
         <p><strong>P.IVA:</strong> 11991170017</p>
@@ -714,19 +775,25 @@ function siteFooter(base) {
       <div class="footer-col">
         <h3>Corsi</h3>
         <ul>
-          <li><a href="${base}corsi.html?filter=irata" class="footer-course-pill" style="--cat:#1e40af;"><span class="filter-dot" aria-hidden="true"></span>IRATA</a></li>
-          <li><a href="${base}corsi.html?filter=gwo" class="footer-course-pill" style="--cat:#db2777;"><span class="filter-dot" aria-hidden="true"></span>GWO</a></li>
-          <li><a href="${base}corsi.html?filter=accreditati" class="footer-course-pill" style="--cat:#0891b2;"><span class="filter-dot" aria-hidden="true"></span>DPI III Categoria</a></li>
-          <li><a href="${base}corsi.html?filter=quota" class="footer-course-pill" style="--cat:#ca8a04;"><span class="filter-dot" aria-hidden="true"></span>Lavori in Quota</a></li>
-          <li><a href="${base}corsi.html?filter=soccorso" class="footer-course-pill" style="--cat:#dc2626;"><span class="filter-dot" aria-hidden="true"></span>Spazi Confinati</a></li>
+          <li><a href="${resolveHref("corsi.html")}?filter=irata" class="footer-course-pill" style="--cat:#1e40af;"><span class="filter-dot" aria-hidden="true"></span>IRATA</a></li>
+          <li><a href="${resolveHref("corsi.html")}?filter=gwo" class="footer-course-pill" style="--cat:#db2777;"><span class="filter-dot" aria-hidden="true"></span>GWO</a></li>
+          <li><a href="${resolveHref("corsi.html")}?filter=accreditati" class="footer-course-pill" style="--cat:#0891b2;"><span class="filter-dot" aria-hidden="true"></span>DPI III Categoria</a></li>
+          <li><a href="${resolveHref("corsi.html")}?filter=quota" class="footer-course-pill" style="--cat:#ca8a04;"><span class="filter-dot" aria-hidden="true"></span>Lavori in Quota</a></li>
+          <li><a href="${resolveHref("corsi.html")}?filter=soccorso" class="footer-course-pill" style="--cat:#dc2626;"><span class="filter-dot" aria-hidden="true"></span>Spazi Confinati</a></li>
         </ul>
       </div>
       <div class="footer-col footer-col--certs">
         <h3>Certificazioni</h3>
         <div class="footer-cert-logos">
-          <img src="https://www.dvformazione.it/img/loghi/logo-petzl-technical-institute.jpg" alt="Petzl Technical Institute" class="footer-cert-logo">
-          <img src="https://www.dvformazione.it/img/loghi/logo-irata-international.jpg" alt="IRATA International" class="footer-cert-logo">
-          <img src="https://www.dvformazione.it/img/loghi/logo-global-wind-organisation.jpg" alt="Global Wind Organisation" class="footer-cert-logo">
+          <a href="https://www.petzl.com/IT/it/" target="_blank" rel="noopener noreferrer" title="Petzl Technical Institute" class="footer-cert-link">
+            <img src="https://www.dvformazione.it/img/loghi/logo-petzl-technical-institute.jpg" alt="Petzl Technical Institute" class="footer-cert-logo">
+          </a>
+          <a href="https://irata.org/" target="_blank" rel="noopener noreferrer" title="IRATA International" class="footer-cert-link">
+            <img src="https://www.dvformazione.it/img/loghi/logo-irata-international.jpg" alt="IRATA International" class="footer-cert-logo">
+          </a>
+          <a href="https://www.globalwindsafety.org/" target="_blank" rel="noopener noreferrer" title="Global Wind Organisation" class="footer-cert-link">
+            <img src="https://www.dvformazione.it/img/loghi/logo-global-wind-organisation.jpg" alt="Global Wind Organisation" class="footer-cert-logo">
+          </a>
         </div>
       </div>
       <div class="footer-col footer-col--contacts">
