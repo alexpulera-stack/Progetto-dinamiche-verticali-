@@ -134,7 +134,7 @@ body.nav-open {
   display: flex;
   align-items: stretch;
   padding: 68px 0 56px;
-  background: #ffffff;
+  background: var(--white);
   animation: none;
   border-bottom: none;
   flex-direction: column;
@@ -413,8 +413,13 @@ footer {
   box-shadow: 0 16px 32px rgba(17, 24, 39, 0.12);
 }
 
-.hero-image-frame::after {
-  content: none;
+.hero-image-frame::before {
+  content: "";
+  position: absolute;
+  inset: -20px 20px 20px -20px;
+  border-radius: 28px;
+  background: var(--orange);
+  z-index: 0;
 }
 
 .hero-climber-image {
@@ -424,6 +429,8 @@ footer {
   display: block;
   border-radius: 20px;
   transition: opacity 0.45s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-certs {
