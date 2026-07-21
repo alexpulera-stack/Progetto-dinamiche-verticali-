@@ -70,7 +70,7 @@ function navBar(base, activePage) {
   const isNestedSitePage = isSitePage && sitePathParts.length > 2;
 
   const resolveHref = (href) => {
-    if (href === "home.html") {
+    if (href === "index.html") {
       if (isRootPage) return "index.html";
       if (isNestedSitePage || isBlogPage) return "../../index.html";
       if (isSitePage) return "../index.html";
@@ -87,7 +87,7 @@ function navBar(base, activePage) {
     const resolvedHref = resolveHref(href);
     const isActive =
       currentPage === href ||
-      (href === "home.html" && currentPage === "index.html");
+      (href === "index.html" && currentPage === "index.html");
 
     return `<li><a href="${resolvedHref}"${isActive ? ' class="is-active" aria-current="page"' : ""}>
       <span class="material-symbols-outlined nav-icon" aria-hidden="true">${icon}</span>
@@ -105,7 +105,7 @@ function navBar(base, activePage) {
       <div class="container">
         <img src="${logoSrc}" class="logo" alt="Dinamiche Verticali" />
         <ul class="nav-links" id="mobile-menu">
-          ${navLink("home.html", "Home", "home")}
+          ${navLink("index.html", "Home", "home")}
           ${navLink("corsi.html", "Corsi", "school")}
           ${navLink("calendario.html", "Calendario", "calendar_month")}
           ${navLink("blog.html", "Blog", "article")}
@@ -718,7 +718,7 @@ function siteFooter(base) {
   const isSitePage = currentPath.includes("/site/") && !isBlogPage;
 
   const resolveHref = (href) => {
-    if (href === "home.html") {
+    if (href === "index.html") {
       if (isRootPage) return "index.html";
       if (isBlogPage) return "../../index.html";
       if (isSitePage) return "../index.html";
@@ -731,7 +731,7 @@ function siteFooter(base) {
     return `${base}${href}`;
   };
 
-  const homeHref = resolveHref("home.html");
+  const homeHref = resolveHref("index.html");
   const logoSrc = isRootPage
     ? "img/logo.svg"
     : isBlogPage
