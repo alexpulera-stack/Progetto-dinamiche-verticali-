@@ -2137,3 +2137,29 @@ footer {
   background: var(--cat, #6b7280);
   flex-shrink: 0;
 }
+
+/* Page hero */
+.page-hero {
+  padding: 64px 0 56px;
+  text-align: center;
+  background-color: var(--orange);
+}
+
+.page-hero .how-kicker {
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.page-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+
+.page-hero-sub {
+  font-size: 1.08rem;
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--white);
+}
