@@ -248,6 +248,18 @@ a.blog-card {
   margin-bottom: 20px;
 }
 
+.article-body a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.article-body a:hover,
+.article-body a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .article-body ul,
 .article-body ol {
   padding-left: 22px;
