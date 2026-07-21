@@ -1,5 +1,27 @@
 /* ── blog.html + articoli – stili specifici ──────────────────────────────── */
 
+.page-hero {
+  background: transparent;
+  padding: 64px 0 56px;
+}
+
+.page-hero .how-kicker,
+.page-hero h1,
+.page-hero-sub {
+  color: var(--orange-dark);
+}
+
+.page-hero h1 {
+  color: var(--blue-navy);
+}
+
+.page-hero-sub {
+  color: #374151;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ── Blog listing ─────────────────────────────────────────────────────────── */
 
 .blog-section {
@@ -173,7 +195,7 @@ a.blog-card {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 800;
   line-height: 1.2;
-  color: var(--black);
+  color: var(--blue-navy);
   margin-bottom: 18px;
 }
 
@@ -198,7 +220,7 @@ a.blog-card {
   display: block;
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--black);
+  color: var(--blue-navy);
 }
 
 .article-meta-text span {
@@ -216,7 +238,7 @@ a.blog-card {
 .article-body h2 {
   font-size: 1.45rem;
   font-weight: 700;
-  color: var(--black);
+  color: var(--blue-navy);
   margin: 40px 0 14px;
 }
 
@@ -224,16 +246,44 @@ a.blog-card {
   margin-bottom: 20px;
 }
 
-.article-body a {
+.article-body a:not(.btn):not(.btn-secondary-outline) {
   color: var(--orange);
   text-decoration: none;
   font-weight: 600;
 }
 
-.article-body a:hover,
-.article-body a:focus-visible {
+.article-body a:not(.btn):not(.btn-secondary-outline):hover,
+.article-body a:not(.btn):not(.btn-secondary-outline):focus-visible {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.article-body a.btn,
+.article-body a.btn-secondary-outline {
+  text-decoration: none;
+}
+
+.article-body a.btn-primary {
+  color: #fff;
+}
+
+.article-body a.btn-secondary,
+.article-body a.btn-secondary-outline {
+  color: var(--blue-navy);
+}
+
+.article-body a.btn-primary:hover,
+.article-body a.btn-primary:focus-visible {
+  color: #fff;
+  text-decoration: none;
+}
+
+.article-body a.btn-secondary:hover,
+.article-body a.btn-secondary:focus-visible,
+.article-body a.btn-secondary-outline:hover,
+.article-body a.btn-secondary-outline:focus-visible {
+  color: #fff;
+  text-decoration: none;
 }
 
 .article-body ul,
@@ -256,7 +306,7 @@ a.blog-card {
 .article-callout p {
   margin: 0;
   font-weight: 500;
-  color: var(--black);
+  color: var(--blue-navy);
 }
 
 .article-back {
@@ -274,11 +324,11 @@ a.blog-card {
   align-items: center;
   gap: 6px;
   padding: 14px 32px;
-  border: 2px solid var(--black);
+  border: 2px solid var(--blue-navy);
   border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
-  color: var(--black);
+  color: var(--blue-navy);
   text-decoration: none;
   transition:
     background 0.2s,
@@ -286,7 +336,7 @@ a.blog-card {
 }
 
 .btn-secondary-outline:hover {
-  background: var(--black);
+  background: var(--blue-navy);
   color: #fff;
 }
 
@@ -298,7 +348,7 @@ a.blog-card {
 .article-body h3 {
   font-size: 1.18rem;
   font-weight: 700;
-  color: var(--black);
+  color: var(--blue-navy);
   margin: 28px 0 10px;
 }
 
@@ -548,9 +598,9 @@ a.blog-card {
 }
 
 .blog-articles-section .blog-card:hover {
-  transform: translateY(-2px);
-  border-color: #dbe2ea;
-  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.12);
+  border-color: #f58220;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
+  transform: translateY(-1px);
 }
 
 .blog-articles-section .blog-image {

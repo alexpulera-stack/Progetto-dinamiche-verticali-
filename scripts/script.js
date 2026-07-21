@@ -168,7 +168,54 @@ function navBar(base, activePage) {
   }
 }
 
-function buildCourseEnrollmentModal(courseTitle, sessions) {
+var COURSE_BASE_PRICES = {
+  "irata-livello-1": 980,
+  "irata-livello-2": 1290,
+  "irata-livello-3": 1590,
+  "gwo-bst": 790,
+  "fune-accesso": 420,
+  "fune-aggiornamento": 220,
+  "fune-salvataggio": 520,
+  "lavori-quota": 300,
+  "pti-livello-1": 690,
+  "pti-livello-2": 890,
+  "soccorso-fune": 390,
+  "dpi-anticaduta": 260,
+};
+
+function formatEuro(value) {
+  return new Intl.NumberFormat("it-IT", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0,
+  }).format(Math.round(value || 0));
+}
+
+function resolveCourseBasePrice(slug, courseTitle) {
+  if (slug && COURSE_BASE_PRICES[slug]) {
+    return COURSE_BASE_PRICES[slug];
+  }
+
+  var title = (courseTitle || "").toLowerCase();
+  if (title.includes("irata") && title.includes("livello 3")) return 1590;
+  if (title.includes("irata") && title.includes("livello 2")) return 1290;
+  if (title.includes("irata") && title.includes("livello 1")) return 980;
+  if (title.includes("gwo")) return 790;
+  if (title.includes("pti") && title.includes("livello 2")) return 890;
+  if (title.includes("pti") && title.includes("livello 1")) return 690;
+  if (title.includes("soccorso")) return 390;
+  if (title.includes("dpi")) return 260;
+  if (title.includes("salvataggio")) return 520;
+  if (title.includes("aggiornamento")) return 220;
+  if (title.includes("fune")) return 420;
+  if (title.includes("quota")) return 300;
+
+  return 450;
+}
+
+function buildCourseEnrollmentModal(courseTitle, sessions, pricingConfig) {
+  var basePrice =
+    pricingConfig && pricingConfig.basePrice ? pricingConfig.basePrice : 450;
   var modal = document.createElement("div");
   modal.className = "enroll-modal";
   modal.setAttribute("aria-hidden", "true");
@@ -210,6 +257,48 @@ function buildCourseEnrollmentModal(courseTitle, sessions) {
                   })
                   .join("")}
               </div>
+            </div>
+          </div>
+          <div class="enroll-pricing" data-base-price="${basePrice}">
+            <p class="enroll-pricing-title" id="enroll-pricing-title">Formula e prezzo stimato</p>
+            <input type="hidden" name="tipologiaPrezzo" value="Individuale" />
+            <input type="hidden" name="numeroPartecipanti" value="1" />
+            <input type="hidden" name="prezzoListino" value="${formatEuro(basePrice)}" />
+            <input type="hidden" name="prezzoSconto" value="${formatEuro(0)}" />
+            <input type="hidden" name="prezzoTotale" value="${formatEuro(basePrice)}" />
+
+            <div class="enroll-pricing-types" role="radiogroup" aria-labelledby="enroll-pricing-title">
+              <button type="button" class="enroll-pricing-type is-selected" role="radio" aria-checked="true" tabindex="0" data-pricing-type="individuale">
+                <span class="enroll-pricing-type-title">Individuale</span>
+                <span class="enroll-pricing-type-meta">1 partecipante</span>
+              </button>
+              <button type="button" class="enroll-pricing-type" role="radio" aria-checked="false" tabindex="-1" data-pricing-type="aziendale">
+                <span class="enroll-pricing-type-title">Aziendale</span>
+                <span class="enroll-pricing-type-meta">Sconto fisso 10%</span>
+              </button>
+            </div>
+
+            <div class="enroll-pricing-company" hidden>
+              <label>
+                Numero partecipanti aziendali
+                <input type="number" class="enroll-company-people" min="2" max="50" step="1" value="2" inputmode="numeric" />
+              </label>
+            </div>
+
+            <div class="enroll-pricing-summary" aria-live="polite">
+              <div class="enroll-pricing-row enroll-pricing-row--listino" data-price-listino-row hidden>
+                <span>Listino originale</span>
+                <strong class="enroll-price-listino" data-price-listino>${formatEuro(basePrice)}</strong>
+              </div>
+              <div class="enroll-pricing-row enroll-pricing-row--discount" data-price-discount-row hidden>
+                <span>Sconto aziendale 10%</span>
+                <strong data-price-sconto>- ${formatEuro(0)}</strong>
+              </div>
+              <div class="enroll-pricing-row enroll-pricing-row--total">
+                <span data-price-total-label>Prezzo totale</span>
+                <strong class="enroll-price-final" data-price-total>${formatEuro(basePrice)}</strong>
+              </div>
+              <p class="enroll-pricing-note" data-price-note>Prezzo per 1 partecipante.</p>
             </div>
           </div>
           <label>
@@ -491,7 +580,7 @@ function enhanceCourseDateSection(ctaBlock) {
   });
 }
 
-function setupCourseEnrollmentFlow(ctaBlock, courseTitle) {
+function setupCourseEnrollmentFlow(ctaBlock, courseTitle, slug) {
   enhanceCourseDateSection(ctaBlock);
 
   var enrollButton = ctaBlock.querySelector(".btn.btn-primary");
@@ -519,7 +608,9 @@ function setupCourseEnrollmentFlow(ctaBlock, courseTitle) {
     sessions = [{ value: "Da concordare", spots: "", price: "" }];
   }
 
-  var modal = buildCourseEnrollmentModal(courseTitle, sessions);
+  var modal = buildCourseEnrollmentModal(courseTitle, sessions, {
+    basePrice: resolveCourseBasePrice(slug, courseTitle),
+  });
   document.body.appendChild(modal);
 
   var closeModal = function () {
@@ -560,6 +651,169 @@ function setupCourseEnrollmentFlow(ctaBlock, courseTitle) {
   var sessionOptions = Array.from(
     form.querySelectorAll(".enroll-session-option"),
   );
+
+  var pricingBox = form.querySelector(".enroll-pricing");
+  var pricingTypeInput = form.querySelector("input[name='tipologiaPrezzo']");
+  var pricingPeopleInput = form.querySelector(
+    "input[name='numeroPartecipanti']",
+  );
+  var pricingListinoInput = form.querySelector("input[name='prezzoListino']");
+  var pricingScontoInput = form.querySelector("input[name='prezzoSconto']");
+  var pricingTotaleInput = form.querySelector("input[name='prezzoTotale']");
+  var pricingTypeButtons = Array.from(
+    form.querySelectorAll(".enroll-pricing-type"),
+  );
+  var companyPricingWrap = form.querySelector(".enroll-pricing-company");
+  var companyPeopleField = form.querySelector(".enroll-company-people");
+  var priceListinoEl = form.querySelector("[data-price-listino]");
+  var priceScontoEl = form.querySelector("[data-price-sconto]");
+  var priceTotaleEl = form.querySelector("[data-price-total]");
+  var priceTotalLabelEl = form.querySelector("[data-price-total-label]");
+  var priceNoteEl = form.querySelector("[data-price-note]");
+  var listinoRowEl = form.querySelector("[data-price-listino-row]");
+  var discountRowEl = form.querySelector("[data-price-discount-row]");
+  var pricingSummaryEl = form.querySelector(".enroll-pricing-summary");
+
+  if (pricingBox && pricingTypeButtons.length) {
+    var basePrice = Number(pricingBox.getAttribute("data-base-price")) || 450;
+    var currentPricingType = "individuale";
+
+    var normalizePeople = function (value) {
+      var parsed = parseInt(value, 10);
+      if (!Number.isFinite(parsed) || parsed < 2) return 2;
+      if (parsed > 50) return 50;
+      return parsed;
+    };
+
+    var updatePricingState = function (type, requestedPeople) {
+      currentPricingType = type === "aziendale" ? "aziendale" : "individuale";
+      var people =
+        currentPricingType === "aziendale"
+          ? normalizePeople(requestedPeople)
+          : 1;
+      var listino = basePrice * people;
+      var sconto = currentPricingType === "aziendale" ? listino * 0.1 : 0;
+      var totale = listino - sconto;
+
+      pricingTypeButtons.forEach(function (button) {
+        var isSelected =
+          button.getAttribute("data-pricing-type") === currentPricingType;
+        button.classList.toggle("is-selected", isSelected);
+        button.setAttribute("aria-checked", isSelected ? "true" : "false");
+        button.tabIndex = isSelected ? 0 : -1;
+      });
+
+      if (companyPricingWrap) {
+        companyPricingWrap.hidden = currentPricingType !== "aziendale";
+      }
+      if (companyPeopleField) {
+        companyPeopleField.disabled = currentPricingType !== "aziendale";
+        companyPeopleField.value = String(people);
+      }
+      if (listinoRowEl) {
+        listinoRowEl.hidden = currentPricingType !== "aziendale";
+      }
+      if (discountRowEl) {
+        discountRowEl.hidden = currentPricingType !== "aziendale";
+      }
+      if (pricingSummaryEl) {
+        pricingSummaryEl.classList.toggle(
+          "is-company",
+          currentPricingType === "aziendale",
+        );
+      }
+
+      if (priceListinoEl) priceListinoEl.textContent = formatEuro(listino);
+      if (priceListinoEl) {
+        priceListinoEl.classList.toggle(
+          "is-crossed",
+          currentPricingType === "aziendale",
+        );
+      }
+      if (priceScontoEl) priceScontoEl.textContent = "- " + formatEuro(sconto);
+      if (priceTotaleEl) priceTotaleEl.textContent = formatEuro(totale);
+      if (priceTotalLabelEl) {
+        priceTotalLabelEl.textContent =
+          currentPricingType === "aziendale"
+            ? "Totale scontato"
+            : "Prezzo totale";
+      }
+      if (priceNoteEl) {
+        priceNoteEl.textContent =
+          currentPricingType === "aziendale"
+            ? "Prezzo finale per " +
+              people +
+              " partecipanti, sconto gia incluso."
+            : "Prezzo per 1 partecipante.";
+      }
+
+      if (pricingTypeInput) {
+        pricingTypeInput.value =
+          currentPricingType === "aziendale" ? "Aziendale" : "Individuale";
+      }
+      if (pricingPeopleInput) {
+        pricingPeopleInput.value = String(people);
+      }
+      if (pricingListinoInput) {
+        pricingListinoInput.value = formatEuro(listino);
+      }
+      if (pricingScontoInput) {
+        pricingScontoInput.value = formatEuro(sconto);
+      }
+      if (pricingTotaleInput) {
+        pricingTotaleInput.value = formatEuro(totale);
+      }
+    };
+
+    pricingTypeButtons.forEach(function (button, index) {
+      button.addEventListener("click", function () {
+        var type = button.getAttribute("data-pricing-type") || "individuale";
+        updatePricingState(
+          type,
+          companyPeopleField ? companyPeopleField.value : 2,
+        );
+      });
+
+      button.addEventListener("keydown", function (event) {
+        if (event.key === " " || event.key === "Enter") {
+          event.preventDefault();
+          button.click();
+          return;
+        }
+
+        if (
+          event.key !== "ArrowRight" &&
+          event.key !== "ArrowDown" &&
+          event.key !== "ArrowLeft" &&
+          event.key !== "ArrowUp"
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        var direction =
+          event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : -1;
+        var nextIndex =
+          (index + direction + pricingTypeButtons.length) %
+          pricingTypeButtons.length;
+        var nextButton = pricingTypeButtons[nextIndex];
+        nextButton.focus();
+        nextButton.click();
+      });
+    });
+
+    if (companyPeopleField) {
+      companyPeopleField.addEventListener("input", function () {
+        updatePricingState(currentPricingType, companyPeopleField.value);
+      });
+
+      companyPeopleField.addEventListener("change", function () {
+        updatePricingState(currentPricingType, companyPeopleField.value);
+      });
+    }
+
+    updatePricingState("individuale", 1);
+  }
 
   var selectSessionOption = function (targetOption) {
     if (!targetOption || !sessionInput) return;
@@ -616,6 +870,13 @@ function setupCourseEnrollmentFlow(ctaBlock, courseTitle) {
 
     var telefono = (data.get("telefono") || "").toString().trim();
     var sessione = (data.get("sessione") || "").toString().trim();
+    var tipologiaPrezzo = (data.get("tipologiaPrezzo") || "").toString().trim();
+    var numeroPartecipanti = (data.get("numeroPartecipanti") || "")
+      .toString()
+      .trim();
+    var prezzoListino = (data.get("prezzoListino") || "").toString().trim();
+    var prezzoSconto = (data.get("prezzoSconto") || "").toString().trim();
+    var prezzoTotale = (data.get("prezzoTotale") || "").toString().trim();
     var messaggio = (data.get("messaggio") || "").toString().trim();
 
     var subject = `Pre-iscrizione ${courseTitle}`;
@@ -625,6 +886,11 @@ function setupCourseEnrollmentFlow(ctaBlock, courseTitle) {
       `Telefono: ${telefono || "-"}`,
       `Corso: ${courseTitle}`,
       `Sessione preferita: ${sessione || "-"}`,
+      `Formula prezzo: ${tipologiaPrezzo || "-"}`,
+      `Partecipanti: ${numeroPartecipanti || "-"}`,
+      `Listino: ${prezzoListino || "-"}`,
+      `Sconto: ${prezzoSconto || "-"}`,
+      `Totale stimato: ${prezzoTotale || "-"}`,
       "",
       "Messaggio:",
       messaggio || "-",
@@ -662,7 +928,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var titleEl = document.querySelector(".course-page-title");
   var courseTitle = titleEl ? titleEl.textContent.trim() : "Corso";
-  setupCourseEnrollmentFlow(ctaBlock, courseTitle);
+  setupCourseEnrollmentFlow(ctaBlock, courseTitle, slug);
 
   var link = document.createElement("a");
   link.href = "../calendario.html?corso=" + slug;

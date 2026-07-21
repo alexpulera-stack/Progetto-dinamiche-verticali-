@@ -30,7 +30,7 @@
 .cal-title {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 800;
-  color: var(--black);
+  color: var(--blue-navy);
   margin-bottom: 12px;
   line-height: 1.18;
 }
@@ -184,14 +184,14 @@
 }
 
 .cal-legend-btn:hover {
-  border-color: var(--black);
-  color: var(--black);
+  border-color: var(--blue-navy);
+  color: var(--blue-navy);
 }
 
 .cal-legend-btn.active {
-  background: var(--black);
+  background: var(--blue-navy);
   color: #fff;
-  border-color: var(--black);
+  border-color: var(--blue-navy);
 }
 
 .cal-legend-btn.active .filter-dot {
@@ -226,7 +226,7 @@
   font-size: 1rem !important;
   font-weight: 700 !important;
   font-family: "Inter", Arial, sans-serif !important;
-  color: var(--black) !important;
+  color: var(--blue-navy) !important;
 }
 
 /* Pulsanti toolbar */
@@ -240,7 +240,7 @@
   font-family: "Inter", Arial, sans-serif !important;
   padding: 6px 13px !important;
   box-shadow: none !important;
-  color: var(--black) !important;
+  color: var(--blue-navy) !important;
   transition:
     background 0.15s,
     border-color 0.15s,
@@ -254,8 +254,8 @@
 
 .fc .fc-button-primary:not(:disabled).fc-button-active,
 .fc .fc-button-primary:not(:disabled):active {
-  background: var(--black) !important;
-  border-color: var(--black) !important;
+  background: var(--blue-navy) !important;
+  border-color: var(--blue-navy) !important;
   color: #fff !important;
 }
 
@@ -365,7 +365,7 @@
 }
 
 .fc .fc-list-event-title a {
-  color: var(--black) !important;
+  color: var(--blue-navy) !important;
   font-weight: 500 !important;
   font-size: 0.88rem !important;
   font-family: "Inter", Arial, sans-serif !important;

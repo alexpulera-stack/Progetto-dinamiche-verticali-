@@ -1,5 +1,21 @@
 /* ── contatti.html – stili specifici ──────────────────────────────────────── */
 
+.page-hero {
+  background: transparent;
+}
+
+.page-hero .how-kicker {
+  color: var(--orange-dark);
+}
+
+.page-hero h1 {
+  color: var(--blue-navy);
+}
+
+.page-hero-sub {
+  color: #374151;
+}
+
 /* ── Layout principale: form + info ───────────────────────────────────────── */
 
 .contact-section {
@@ -25,7 +41,7 @@
 .contact-form-card h2 {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--black);
+  color: var(--blue-navy);
   margin-bottom: 4px;
 }
 
@@ -56,7 +72,7 @@
 .contact-form-field label {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--black);
+  color: var(--blue-navy);
   letter-spacing: 0.02em;
 }
 
@@ -68,7 +84,7 @@
   border-radius: 10px;
   font-size: 0.95rem;
   font-family: inherit;
-  color: var(--black);
+  color: var(--blue-navy);
   background: #f9fafb;
   transition:
     border-color 0.2s,
@@ -132,7 +148,7 @@
 .contact-info-card h2 {
   font-size: 1.2rem;
   font-weight: 800;
-  color: var(--black);
+  color: var(--blue-navy);
   margin-bottom: 22px;
 }
 
@@ -159,7 +175,7 @@
   display: block;
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--black);
+  color: var(--blue-navy);
   margin-bottom: 2px;
   letter-spacing: 0.02em;
 }
@@ -193,7 +209,7 @@
 .contact-channels-card h2 {
   font-size: 1.2rem;
   font-weight: 800;
-  color: var(--black);
+  color: var(--blue-navy);
   margin-bottom: 16px;
 }
 
@@ -237,7 +253,7 @@
 }
 
 .contact-channel-call {
-  background: var(--black);
+  background: var(--blue-navy);
   color: #fff;
 }
 
@@ -263,7 +279,7 @@
 .contact-map-header h2 {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--black);
+  color: var(--blue-navy);
   margin-bottom: 8px;
 }
 

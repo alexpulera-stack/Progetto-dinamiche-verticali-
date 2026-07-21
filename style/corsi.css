@@ -1,5 +1,21 @@
 /* ── formazione.html – stili specifici ───────────────────────────────────── */
 
+.page-hero {
+  background: transparent;
+}
+
+.page-hero .how-kicker {
+  color: var(--orange-dark);
+}
+
+.page-hero h1 {
+  color: var(--blue-navy);
+}
+
+.page-hero-sub {
+  color: #374151;
+}
+
 /* Search */
 .formazione-search {
   position: relative;
@@ -26,7 +42,7 @@
   outline: none;
   transition: border-color 0.2s;
   font-family: inherit;
-  color: var(--black);
+  color: var(--blue-navy);
 }
 
 .formazione-search input:focus {
@@ -61,7 +77,7 @@
 .formazione-cards-grid .course-card {
   width: 100%;
   height: auto;
-  min-height: 580px;
+  min-height: 520px;
 }
 
 /* No results */
@@ -94,6 +110,10 @@
 
   .formazione-cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  .formazione-cards-grid .course-card {
+    min-height: 0;
   }
 
   .formazione-controls {

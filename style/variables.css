@@ -3,8 +3,8 @@
 :root {
   --orange: #f58220;
   --orange-dark: #d86d13;
-  --black: #111827;
-  --dark: #1f2937;
+  --blue-navy: #111827;
+  --blue-navy-dark: #1f2937;
   --gray: #6b7280;
   --light: #f8fafc;
   --white: #ffffff;
@@ -39,7 +39,7 @@ body {
   line-height: 1.6;
   font-size: 1rem; /* ensure base text uses rem */
   background: white;
-  color: var(--black);
+  color: var(--blue-navy);
 }
 
 .container {
