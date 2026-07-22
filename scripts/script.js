@@ -66,8 +66,13 @@ function navBar(base, activePage) {
     currentPath.endsWith("/");
   const isBlogPage = currentPath.includes("/site/blog/");
   const isSitePage = currentPath.includes("/site/") && !isBlogPage;
-  const sitePathParts = currentPath.replace(/^\/+/, "").split("/");
-  const isNestedSitePage = isSitePage && sitePathParts.length > 2;
+  const siteMarkerIndex = currentPath.indexOf("/site/");
+  const pathAfterSite =
+    siteMarkerIndex !== -1
+      ? currentPath.slice(siteMarkerIndex + "/site/".length)
+      : "";
+  const isNestedSitePage =
+    isSitePage && pathAfterSite.split("/").filter(Boolean).length > 1;
 
   const resolveHref = (href) => {
     if (href === "index.html") {
